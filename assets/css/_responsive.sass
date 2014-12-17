@@ -5,13 +5,14 @@
     @media only screen and (max-width: 600px)
       @content
 
-  @else if $media == medium-screens
+  @else if $media == small-screens
     @media only screen and (min-width: 601px)
       @content
 
-  @else if $media == wide-screens
+  @else if $media == medium-screens
     @media only screen and (min-width: 900px)
       @content
 
-  @else if $media == giant-screens
+  @else if $media == wide-screens
     @media only screen and (min-width: 1400px)
+      @content

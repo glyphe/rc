@@ -1,2 +1,48 @@
 // Navigation
 nav
+
+	@include respond-to(handhelds)
+		font-size: 1.2em
+		margin-left: 2.2em // Damit Navi unter Wortmarke von links beginnt
+		display: flex // Um Reihenfolge der Navigationen bei Handhelds zu tauschen
+		flex-flow: column
+
+	@include respond-to(medium-screens)
+		text-align: right
+
+	li
+		margin-right: 0.3em // Abstand zw. Navigationspunkten
+
+		&:last-child
+			margin-right: none
+
+	.fa
+		font-size: 1.2em // Icons größer machen in Navi
+
+
+.nav-meta
+	@include respond-to(handhelds)
+		order: 2 // Meta-Nav nach Main-Nav auf handhelds
+
+	@include respond-to(small-screens)
+		ul li
+			display: inline-block
+
+	@include respond-to(medium-screens)
+		font-size: 0.8em
+
+
+.nav-hide // Links in Meta-Nav bei kleiner Auflösung ausblenden
+	@include respond-to(handhelds)
+		display: none
+
+
+.nav-main
+	font-weight: 600
+
+	ul li
+		@include respond-to (small-screens)
+			display: inline-block
+
+	@include respond-to(small-screens)
+		font-size: 1.2em

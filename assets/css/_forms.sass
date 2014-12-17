@@ -1,9 +1,11 @@
 label
 
 input
-	-webkit-appearance: none
+	font-family: $font-family
 	-webkit-border-radius: 0
 	width: 100%
+	border: 2px solid $text-color-prim
+	color: $text-color-prim
 
 	&:focus
 		outline: none
@@ -21,3 +23,11 @@ textarea
 
 select
 	@extend input
+
+nav select // Sprachauswahl
+	font-size: 0.8em
+	font-weight: 600
+	padding: 0
+	margin: 0
+	height: 1.5em
+	width: auto

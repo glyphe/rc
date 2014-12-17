@@ -1,1 +1,23 @@
 // Design einzelner Module
+
+header
+	background-color: rgb(230,230,230)
+	padding: 1em $inner-distance
+
+	@include respond-to(medium-screens)
+		display: flex // Navigation & Logo nebeneinander
+		align-items: flex-end
+		justify-content: space-between
+		padding: 1.5em $inner-distance
+
+
+.logo
+	width: 10em
+	margin-bottom: 0.8em
+
+	@include respond-to(small-screens)
+		width: 12em
+
+	@include respond-to(medium-screens)
+		margin-bottom: 0
+
