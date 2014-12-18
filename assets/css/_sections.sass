@@ -11,6 +11,14 @@ header
 		padding: 1.5em $inner-distance
 
 
+main
+	margin: 2em 0
+	padding: 0 $inner-distance
+
+.handhelds-hide // Links in Meta-Nav bei kleiner Auflösung ausblenden
+	@include respond-to(handhelds)
+		display: none
+
 .logo
 	width: 10em
 	margin-bottom: 0.8em

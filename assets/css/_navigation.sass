@@ -1,6 +1,30 @@
-// Navigation
-nav
+// NAVIGATION
 
+// ## Resets ##
+nav ul
+	margin: 0
+	padding: 0
+
+
+
+// ## Links ##
+nav
+	a:link, a:visited
+		text-decoration: none
+		transition: 0.3s ease-in-out all
+
+.nav-meta
+	a:link, a:visited
+		color: $brand-color-sec
+
+	a:hover
+		color: $brand-color-prim
+
+
+
+// ## Hauptnavigation ##
+.nav-main,
+.nav-meta
 	@include respond-to(handhelds)
 		font-size: 1.2em
 		margin-left: 2.2em // Damit Navi unter Wortmarke von links beginnt
@@ -30,11 +54,6 @@ nav
 
 	@include respond-to(medium-screens)
 		font-size: 0.8em
-
-
-.nav-hide // Links in Meta-Nav bei kleiner Auflösung ausblenden
-	@include respond-to(handhelds)
-		display: none
 
 
 .nav-main
