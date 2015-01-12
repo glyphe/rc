@@ -1,0 +1,15 @@
+.btn {
+  display: inline-block;
+  margin: 0.2em 0.5em 0.2em 0;
+  &:link, &:visited {
+    padding: 0.4em 0.8em 0.3em;
+  }
+  &:hover {}
+  &:active, &:focus {}
+}
+
+.btn-action {
+  @extend .btn;
+  &:link, &:visited {}
+  &:hover, &:active, &:focus {}
+}
