@@ -26,14 +26,14 @@ nav {
 // ## Hauptnavigation ##
 .nav-main,
 .nav-meta {
-  @include respond-to(handhelds) {
+  @include respond-to(bp-small-only) {
     font-size: 1.2em;
     margin-left: 2.2em;
     display: flex;
     flex-flow: column;
   }
 
-  @include respond-to(medium-screens) {
+  @include respond-to(bp-large) {
     text-align: right;
   }
 
@@ -49,17 +49,17 @@ nav {
 }
 
 .nav-meta {
-  @include respond-to(handhelds) {
+  @include respond-to(bp-small-only) {
     order: 2;
   }
 
-  @include respond-to(small-screens) {
+  @include respond-to(bp-medium) {
     ul li {
       display: inline-block;
     }
   }
 
-  @include respond-to(medium-screens) {
+  @include respond-to(bp-large) {
     font-size: 0.8em;
   }
 }
@@ -67,11 +67,11 @@ nav {
 .nav-main {
   font-weight: 600;
   ul li {
-    @include respond-to(small-screens) {
+    @include respond-to(bp-medium) {
       display: inline-block;
     }
   }
-  @include respond-to(small-screens) {
+  @include respond-to(bp-medium) {
     font-size: 1.2em;
   }
 }

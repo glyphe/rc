@@ -4,7 +4,7 @@ header {
   background-color: rgb(230, 230, 230);
   padding: 1em $inner-distance;
 
-  @include respond-to(medium-screens) {
+  @include respond-to(bp-large) {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -18,7 +18,7 @@ main {
 }
 
 .handhelds-hide { // Links in Meta-Nav bei kleiner Auflösung ausblenden
-  @include respond-to(handhelds) {
+  @include respond-to(bp-small-only) {
     display: none;
   }
 }
@@ -27,11 +27,11 @@ main {
   width: 10em;
   margin-bottom: 0.8em;
   
-  @include respond-to(small-screens) {
+  @include respond-to(bp-medium) {
     width: 12em;
   }
 
-  @include respond-to(medium-screens) {
+  @include respond-to(bp-large) {
     margin-bottom: 0;
   }
 }

@@ -6,15 +6,15 @@ body {
   font-weight: 400;
   color: $text-color-prim;
   line-height: 1.5;
-  @include respond-to(small-screens) {
+  @include respond-to(bp-medium) {
     font-size: 1.1em;
   }
 
-  @include respond-to(medium-screens) {
+  @include respond-to(bp-large) {
     font-size: 1.3em;
   }
 
-  @include respond-to(wide-screens) {
+  @include respond-to(bp-xlarge) {
     font-size: 1.4em;
   }
 }
