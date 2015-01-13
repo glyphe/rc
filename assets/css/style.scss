@@ -5,8 +5,8 @@
 @import "mixins"; // meine Mixins
 
 
-@import "neat"; // Grid
-@import "bourbon"; // Mixin Libaray
+@import "../bourbon/bourbon"; // Mixin Libaray
+@import "../neat/neat"; // Grid
 @import "font-awesome";
 
 @import "buttons";
