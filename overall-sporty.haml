@@ -2,36 +2,48 @@
 <!-- @include header -->
 
 %main.product-page
+	.shop
+		.shop-gallery
+			.shop-gallery-thumbs
+				%ul
+					%li.thumb-active
+						%img(src="<!-- @path sporty-verwandlung-4 -->")
+					%li
+						%img(src="<!-- @path sporty-verwandlung-4 -->")
+					%li
+						%img(src="<!-- @path sporty-verwandlung-4 -->")
+			.shop-gallery-img-big
+				%img(src="<!-- @path sporty-verwandlung-4 -->")
 
-	%section.shop
-		%h1	Overall Sporty
+		.shop-details
+			%h1	Overall Sporty
 
-		%ul.ul-features
-			%li In der City und Outdoor
-			%li In 30 Sekunden angezogen ohne Schuhe ausziehen
-			%li Wasser- und winddicht, atmungsaktiv
-			%li Mehr Sicherheit im Verkehr: gut sehen und immer gut sichtbar sein
-			%li Integrierte Hüfttasche zum Transport
-			%a.link-down(href="#features") Alle Features
-		
-		%h2 Farbe
+			%ul.ul-features
+				%li In der City und Outdoor
+				%li In 30 Sekunden angezogen ohne Schuhe ausziehen
+				%li Wasser- und winddicht, atmungsaktiv
+				%li Mehr Sicherheit im Verkehr: gut sehen und immer gut sichtbar sein
+				%li Integrierte Hüfttasche zum Transport
+				%a.link-down(href="#features") Alle Features
+			
+			%h2 Farbe
 
-		%h2 Größe
-		%select
-			%option Größe wählen
-			%option Small (S)
-			%option Medium (M)
-			%option Medium-Power (M-P)
-			%option Large (L)
-			%option Large (L-P)
-			%option X-Large (L)
-			%option X-Large-Power (XL-P)
-		%a(href="#") Welche Größe passt mir?
+			%h2 Größe
+			%select
+				%option Größe wählen
+				%option Small (S)
+				%option Medium (M)
+				%option Medium-Power (M-P)
+				%option Large (L)
+				%option Large (L-P)
+				%option X-Large (L)
+				%option X-Large-Power (XL-P)
+			%a(href="#") Welche Größe passt mir?
 
-		%p.price € 270,00
-		%p
-			inkl. MwSt.<br>Details zu Bezahlung, Versand und Rückgabe finden Sie <a href="#">hier</a>.
-		%a.btn-action(href="#") In den Warenkorb
+			%p.price € 270,00
+			%p
+				inkl. MwSt.<br>Details zu Bezahlung, Versand und Rückgabe finden Sie <a href="#">hier</a>.
+			%a.btn-action(href="#") In den Warenkorb
 
 
 	%section.sec-verwandlung
