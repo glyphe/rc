@@ -14,7 +14,6 @@ header {
 
 main {
   margin: 2em 0;
-  padding: 0 $inner-distance;
 }
 
 .handhelds-hide { // Links in Meta-Nav bei kleiner Auflösung ausblenden
@@ -36,6 +35,156 @@ main {
   }
 }
 
-.headline-icons {
-  width: 70px;
+
+// ##################
+// ## PRODUKTSEITE ##
+// ##################
+
+.headline-icon {
+  width: 50px;
+  display: block;
+
+  @include respond-to(bp-small-only) {
+    margin: 0 auto; // Icon überall zentrieren bei kleinstem Breakpoint
+  }
 }
+
+.feature-image {
+  width: 100%;
+  @include respond-to(bp-small-only) {
+    max-width: 250px;
+  }
+}
+
+.product-page section {
+  padding: 0 $inner-distance;
+
+  @include respond-to(bp-small-only) {
+    text-align: center;  // Text überall zentrieren bei kleinstem Breakpoint
+  }
+
+  &:nth-child(2n+1) { // Hintergrundfläche jeder zweiten Sektion anders
+    background: url(soft_wallpaper.jpg);
+  }
+}
+
+
+section.sec-verwandlung {
+  text-align: center;
+  padding: 0; // damit Gallery-Bilder bis an den Rand gehen
+
+  h2 {
+    text-align: center;
+    padding: 0 $inner-distance; // damit Text nicht am Rand klebt
+  }
+
+  p {
+    max-width: $max-width-text;
+    margin: 0 auto;
+    padding: 0 $inner-distance; // damit Text nicht am Rand klebt
+  }
+
+  .headline-icon {
+    margin: 0 auto;
+  }
+}
+
+.verwandlug-gallery {
+  overflow: auto; // macht Scrollbar, wenn der Bildschirm zu klein ist
+
+  ul {
+    padding: 0; // Rest
+    list-style: none; // Rest
+    margin: 0 auto;
+    width: 640px; // damit Bilder nebeinander sind und es nicht umbricht
+    @include respond-to(bp-medium) {
+      width: 1040px;
+    }
+  }
+
+  li {
+    display: inline-block; // nebeineinander
+
+    &:after {
+      font-family: 'FontAwesome';
+      content: $fa-var-chevron-circle-right;
+      font-size: 1.5em;
+      position: relative;
+      bottom: 150px;
+      left: -0.75em;
+      color: $gray-1;
+      @include respond-to(bp-medium) {
+        bottom: 250px;
+      }
+    }
+    &:last-child:after {
+      content: none;
+    }
+  }
+
+  img {
+    width: 130px;
+    @include respond-to(bp-medium) {
+      width: 220px;
+    }
+  }
+
+}
+
+.sec-belueftung {
+  @include respond-to(bp-medium) {
+    @include outer-container
+  }
+
+  div:first-child {
+    @include respond-to(bp-medium) {
+      @include span-columns(6);
+    }
+    @include respond-to(bp-large) {
+      @include span-columns(8);
+    }
+  }
+  div:last-child {
+    @include respond-to(bp-medium) {
+      @include span-columns(6);
+    }
+    @include respond-to(bp-large) {
+      @include span-columns(4);
+    }
+  }
+
+  .feature-image {
+    @include respond-to(bp-small-only) {
+      border-top: 1px solid $brand-color-prim;
+    }
+  }
+}
+
+.sec-kapuze {
+  @include respond-to(bp-medium) {
+    @include outer-container;
+    @include row($direction: RTL); // Ändert die Reihenfolge der Container
+  }
+
+  div:first-child {
+    @include respond-to(bp-medium) {
+      @include span-columns(6);
+    }
+    @include respond-to(bp-large) {
+      @include span-columns(8);
+    }
+  }
+  div:last-child {
+    @include respond-to(bp-medium) {
+      @include span-columns(6);
+    }
+    @include respond-to(bp-large) {
+      @include span-columns(4);
+    }
+  }
+
+}
+
+
+
+

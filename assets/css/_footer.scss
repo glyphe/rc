@@ -38,8 +38,6 @@ footer .container {
 
     @include respond-to(bp-large) {
       @include span-columns(4);
-
-
     }
   }
 }

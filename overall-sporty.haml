@@ -1,62 +1,81 @@
 <!-- $title Raincombi Overall Sporty Regenoverall -->
 <!-- @include header -->
 
-%main
+%main.product-page
 
-	%h1	Overall Sporty
+	%section.shop
+		%h1	Overall Sporty
 
-	%ul.ul-features
-		%li In der City und Outdoor
-		%li In 30 Sekunden angezogen ohne Schuhe ausziehen
-		%li Wasser- und winddicht, atmungsaktiv
-		%li Mehr Sicherheit im Verkehr: gut sehen und immer gut sichtbar sein
-		%li Integrierte Hüfttasche zum Transport
-		%a.link-down(href="#features") Alle Features
-	
-	%h2 Farbe
+		%ul.ul-features
+			%li In der City und Outdoor
+			%li In 30 Sekunden angezogen ohne Schuhe ausziehen
+			%li Wasser- und winddicht, atmungsaktiv
+			%li Mehr Sicherheit im Verkehr: gut sehen und immer gut sichtbar sein
+			%li Integrierte Hüfttasche zum Transport
+			%a.link-down(href="#features") Alle Features
+		
+		%h2 Farbe
 
-	%h2 Größe
-	%select
-		%option Größe wählen
-		%option Small (S)
-		%option Medium (M)
-		%option Medium-Power (M-P)
-		%option Large (L)
-		%option Large (L-P)
-		%option X-Large (L)
-		%option X-Large-Power (XL-P)
-	%a(href="#") Welche Größe passt mir?
+		%h2 Größe
+		%select
+			%option Größe wählen
+			%option Small (S)
+			%option Medium (M)
+			%option Medium-Power (M-P)
+			%option Large (L)
+			%option Large (L-P)
+			%option X-Large (L)
+			%option X-Large-Power (XL-P)
+		%a(href="#") Welche Größe passt mir?
 
-	%p.price € 270,00
-	%p
-		inkl. MwSt.<br>Details zu Bezahlung, Versand und Rückgabe finden Sie <a href="#">hier</a>.
-	%a.btn-action(href="#") In den Warenkorb
+		%p.price € 270,00
+		%p
+			inkl. MwSt.<br>Details zu Bezahlung, Versand und Rückgabe finden Sie <a href="#">hier</a>.
+		%a.btn-action(href="#") In den Warenkorb
 
 
-	%section
+	%section.sec-verwandlung
 		%h2
-			%img(src="<!-- @path icon_uhr.svg -->")
+			%img.headline-icon(src="<!-- @path icon_uhr.svg -->" width="40px")
 			Ruckzuck mit Ohne-Schuhe-Ausziehen
-		%img(src="")
+		.verwandlug-gallery
+			%ul
+				%li
+					%img(src="<!-- @path sporty-verwandlung-1 -->")
+				%li
+					%img(src="<!-- @path sporty-verwandlung-2 -->")
+				%li
+					%img(src="<!-- @path sporty-verwandlung-3 -->")
+				%li
+					%img(src="<!-- @path sporty-verwandlung-4 -->")
+
 		%p Einfach in die Ärmel, wie in einen Mantel hineinschlüpfen, den oberen und dann zwei untere Reißverschlüsse zumachen – in 30 Sekunden! 
 
-	%section
-		%h2
-			%img(src="<!-- @path icon_luft.svg -->")
-			Belüftung mit System
-		%p Die clevere Linienführung sorgt für optimale Belüftung bei der Fahrt. Die am hinteren Taillenabschnitt platzierte Gummikordel strafft das Overall-Vorderteil am Körper, nichts flattert. Das Rückenteil bedeckt die Seiten und hält Regenwasser fern.
+	%section.sec-belueftung
+		%div
+			%h2
+				%img.headline-icon(src="<!-- @path icon_luft.svg -->")
+				Belüftung mit System
+			%p Die clevere Linienführung sorgt für optimale Belüftung bei der Fahrt. Die am hinteren Taillenabschnitt platzierte Gummikordel strafft das Overall-Vorderteil am Körper, nichts flattert. Das Rückenteil bedeckt die Seiten und hält Regenwasser fern.
+		%div
+			%img.feature-image(src="<!-- @path sporty-belueftung -->")
+
+	%section.sec-kapuze
+		%div
+			%h2 
+				%img.headline-icon(src="<!-- @path icon_ampel.svg -->")
+				Sicher durch den Verkehr
+			%p Die Kapuze wird mit zwei Gummizügen exakt reguliert, auch über einem Fahrradhelm. Reflektoren im Stirnbereich und seitlich.
+		%div
+			%img.feature-image(src="<!-- @path sporty-kapuze -->")
 
 	%section
-		%h2 
-			%img(src="<!-- @path icon_ampel.svg -->")
-			Sicher durch den Verkehr
-		%p Die Kapuze wird mit zwei Gummizügen exakt reguliert, auch über einem Fahrradhelm. Reflektoren im Stirnbereich und seitlich.
-
-	%section
+		%img.feature-image(src="<!-- @path sporty-rolle -->")
 		%h2 Nimms leicht
 		%p Mit 430g (Größe S) ist der Overall Sporty ein echtes Fliegengewicht. Eingepackt wird er zur handlichen Rolle, die du einstecken oder am Fahrrad befestigen kannst.
 
 	%section
+		%img.feature-image(src="<!-- @path sporty-beine -->")
 		%h2 Hosenbeine regulierbar
 		%p Die Breite wird mit Klettverschlüssen angepasst, optimaler Kettenschutz. Auch die Taillenweite kann je nach Bedarf auf darunter getragene Kleidung eingestellt werden. 
 
