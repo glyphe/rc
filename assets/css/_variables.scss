@@ -11,7 +11,7 @@ $gray-1: rgb(200,200,200);
 
 // GRÖSSEN
 
-$max-width: 2000px; // wird auch vom neat Grid verwendet
+$max-width: 1400px; // wird auch vom neat Grid verwendet
 $max-width-text: 40em;
 $max-width-images: 80%;
 
@@ -23,6 +23,6 @@ $font-family: "nudista-web", Arial, sans-serif;
 
 // BREAKPOINTS
 $bp-small: 599px;
-$bp-medium: 600px;
-$bp-large: 900px;
+$bp-medium: 550px;
+$bp-large: 800px;
 $bp-xlarge: 1200px;

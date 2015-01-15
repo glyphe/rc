@@ -5,17 +5,17 @@ body {
   font-style: normal;
   font-weight: 400;
   color: $text-color-prim;
-  line-height: 1.5;
+
   @include respond-to(bp-medium) {
     font-size: 1.1em;
   }
 
   @include respond-to(bp-large) {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   @include respond-to(bp-xlarge) {
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 }
 
@@ -38,7 +38,10 @@ h2 {
   line-height: 1.2
 }
 
-h3 {}
+h3 {
+  margin: 2em 0 1em;
+  font-size: 1em;
+}
 
 // p {
 //   max-width: $max-width-text;
@@ -68,5 +71,11 @@ figcaption {
 .ul-features {
   list-style-image: url('../img/icon-bullet-drop.svg');
   padding-left: 1em;
+  text-align: left;
+  line-height: 1.2;
+
+  li {
+    margin-bottom: 0.5em;
+  }
 }
 
