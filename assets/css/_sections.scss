@@ -136,7 +136,9 @@ section.sec-shop-overview {
     position: absolute;
     top: 2em;
     right: 2em;
-    width: 5em;
+    width: 18%;
+    min-width: 80px;
+    max-width: 150px;
   }
 
   a:link, a:visited {
@@ -144,8 +146,9 @@ section.sec-shop-overview {
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 0;
+    padding-top: 0.5em;
   }
 
   ul {
@@ -316,6 +319,7 @@ li.thumb-active {
 
   h2 {  // Zwischenüberschriften bei den Details
     margin-top: 0.5em;
+    margin-bottom: 0.5em;
     text-transform: uppercase;
     font-style: normal;
     color: $text-color-prim;
@@ -338,6 +342,7 @@ p.price { // Preis im Shop
   color: $brand-color-prim;
   font-size: 1.5em;
   margin-top: 1em;
+  margin-bottom: 0;
   padding-bottom: 0;
 
   s { // Durchgestrichener Preis
@@ -348,6 +353,7 @@ p.price { // Preis im Shop
 
 p.price-details {
   font-size: 0.8em;
+  margin: 0 0 1em 0;
 }
 
 .size {
