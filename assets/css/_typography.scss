@@ -79,3 +79,22 @@ figcaption {
   }
 }
 
+.ul-check {
+  @extend .ul-features;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+
+  li {
+    padding-left: 1.3em;
+    text-indent: -1.3em;
+
+    &:before {
+      font-family: "ElegantIcons";
+      content: "\4e";
+      padding-right: 0.3em;
+    }
+  }
+}
+

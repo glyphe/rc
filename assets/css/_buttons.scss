@@ -1,9 +1,18 @@
 .btn {
   display: inline-block;
   margin: 0.2em 0.5em 0.2em 0;
+  padding: 0.4em 0.8em 0.5em;
+  background-color: $brand-color-prim;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
+
   &:link, &:visited {
-    padding: 0.4em 0.8em 0.3em;
+    color: #fff;
+    text-decoration: none;
   }
+
   &:hover {}
   &:active, &:focus {}
 }
@@ -12,4 +21,17 @@
   @extend .btn;
   &:link, &:visited {}
   &:hover, &:active, &:focus {}
+}
+
+.btn-buy {
+  font-size: 1.2em;
+  text-align: center;
+
+
+  &:before {
+    font-family: "ElegantIcons";
+    content: "\e015";
+    margin-right: 8px;
+    margin-left: -4px;
+  }
 }

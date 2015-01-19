@@ -13,7 +13,7 @@ header {
 }
 
 main {
-  margin: 2em 0;
+  margin: 0;
 }
 
 .handhelds-hide { // Links in Meta-Nav bei kleiner Auflösung ausblenden
@@ -35,12 +35,12 @@ main {
   }
 }
 
+// ################
+// ## GENERELLES ##
+// ################
 
-// ##################
-// ## PRODUKTSEITE ##
-// ##################
 
-.product-page {
+section {
   p {
     margin: 0;
     padding-bottom: 1em;
@@ -52,6 +52,135 @@ main {
   }
 }
 
+
+// ###############
+// ## HOME-PAGE ##
+// ###############
+
+section.sec-keyvisual {
+  img {
+    width: 100%;
+  }
+}
+
+section.sec-feature-list {
+  @include outer-container;
+  background: $section-background;
+  padding: 1em $inner-distance 2em;
+  text-align: center;
+
+  h2 {
+    max-width: $max-width-text/1.7;
+    margin: 0 auto 1em;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    font-style: italic;
+    color: $brand-color-prim;
+    margin: 1em 0 0.3em 0;
+  }
+  p {
+    font-size: 0.9em;
+    @include respond-to(bp-small-only) {
+      display: none; // Beschreibungstexte bei Mobile ausblenden
+    }
+  }
+
+  .icon-drop {
+    width: 80px;
+    @include respond-to(bp-medium) {
+      width: 100px;
+    }
+    @include respond-to(bp-xlarge) {
+      width: 120px;
+    }
+  }
+
+}
+
+.flex-grid-container {
+  @include display(flex);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+
+  > div {
+    width: 50%;
+    padding: 1em 1em 0 1em;
+    @include respond-to(bp-medium) {
+      width: 33%;
+    }
+    @include respond-to(bp-xlarge) {
+      width: 20%;
+    }
+  }
+}
+
+section.sec-shop-overview {
+  @extend section.sec-small-feature-container; // Zweispaltigkeit
+  background: $section-background;
+  text-align: center;
+  @include respond-to(bp-large) {
+    border-top: 0.5em solid $background-color;
+  }
+
+  .img-shop {  // Shop-Bilder
+    margin: 0 auto;
+    max-width: 220px;
+    @include respond-to(bp-medium) {
+      max-width: 300px;
+    }
+  }
+
+  .icon-eu-made {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    width: 5em;
+  }
+
+  a:link, a:visited {
+    text-decoration: none;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+
+  ul {
+    max-width: 18em;
+    margin: 1em auto;
+  }
+
+  > section {
+    padding: 2em $inner-distance;
+    border-top: 0.5em solid $background-color;
+    position: relative;  // Als Referenz für Eu-Made-Icons
+
+    @include respond-to(bp-large) {
+      border-top: none;
+    }
+    &:first-child{
+      @include respond-to(bp-large) {
+        border-right: 0.25em solid $background-color;
+      }
+    }
+    &:last-child{
+      @include respond-to(bp-large) {
+        border-left: 0.25em solid $background-color;
+      }
+    }
+
+  }
+
+}
+
+// ##################
+// ## PRODUKTSEITE ##
+// ##################
+
+
 .product-page section {
   padding: 0 $inner-distance;
 
@@ -60,7 +189,7 @@ main {
   }
 
   &:nth-child(2n+1) { // Hintergrundfläche jeder zweiten Sektion anders
-    background: url(soft_wallpaper.jpg);
+    background: $section-background;
   }
 }
 
@@ -79,7 +208,11 @@ main {
   }
 }
 
-.shop {
+// ##############
+// #### SHOP ####
+// ##############
+
+.shop-container {
   padding: 0;
   text-align: inherit;
 
@@ -95,6 +228,7 @@ main {
 }
 
 .shop-gallery {
+  padding: 1em $inner-distance;
   background: url(../img/shop-bg-big.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -117,8 +251,10 @@ main {
   }
   li {
     background-color: rgba(255,255,255,0.7);
-    width: 90px;
-    height: 90px;
+    @include size(75px); // width: 75; height: 75;
+    @include respond-to(bp-medium) {
+      @include size(90px);
+    }
     border-radius: 5px;
     padding: 5px;
     margin: 10px 0;
@@ -142,15 +278,18 @@ li.thumb-active {
     margin: 0 auto;
     width: 90%;
     max-width: 250px;
+    @include respond-to(bp-small-only) {
+      width: 70%;
+    }
     @include respond-to(bp-large) {
       max-width: 350px;
     }
   }
 }
 
-
 .shop-details {
-  padding: 0 $inner-distance;
+  padding: 2em $inner-distance;
+  background: $section-background;
 
   @include respond-to(bp-large) {
     @include span-columns(6);
@@ -159,7 +298,69 @@ li.thumb-active {
     border-radius: 10px;
   }
 
+  > div {
+    @include respond-to(bp-xlarge) { // Preis und Größe zweispaltig darstellen
+      @include row(); // cleart nach dem Block
+      margin-bottom: 1em;
+
+      > div {
+        @include span-columns(3 of 6);
+      }
+    }
+  }
+
+
+  h1 {
+    line-height: 1;
+  }
+
+  h2 {  // Zwischenüberschriften bei den Details
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    font-style: normal;
+    color: $text-color-prim;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
 }
+
+.shop-color { // Farb-Auwahl
+  font-size: 1.6em;
+  width: 1.6em;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 3px;
+  border: 2px solid $gray-1;
+}
+
+p.price { // Preis im Shop
+  color: $brand-color-prim;
+  font-size: 1.5em;
+  margin-top: 1em;
+  padding-bottom: 0;
+
+  s { // Durchgestrichener Preis
+    color: $gray-2;
+    font-size: 0.8em;
+  }
+}
+
+p.price-details {
+  font-size: 0.8em;
+}
+
+.size {
+  max-width: 12em;
+}
+
+.link-size {
+  font-size: 0.9em;
+  display: block;
+  margin-top: 0.4em;
+}
+
+
 
 
 section.sec-verwandlung {
@@ -341,7 +542,10 @@ section.sec-beine {
 section.sec-text-features {
   text-align: center;
   padding: 2em $inner-distance;
+
   @include respond-to(bp-large) {
+    padding-top: 4em;
+    padding-bottom: 4em;
     font-size: 0.9em;
     @include outer-container;
   }
@@ -363,6 +567,9 @@ section.sec-text-features {
 
 section.sec-pflege {
   @extend .sec-text-features;
+  @include respond-to(bp-large) {
+    padding-top: 2em;
+  }
 
   p {
     @include respond-to(bp-large) {
@@ -370,11 +577,86 @@ section.sec-pflege {
     }
   }
 
+  .headline-icon {
+    margin-bottom: 0.4em;
+  }
+
   h3 {
+    margin-top: 2.5em;
     @include respond-to(bp-large) {
       text-align: left;
     }
   }
 }
 
+// ### Vergleichstabelle ###
 
+section.sec-table {
+  padding: 0 5px; // Damit Tabelle näher am Rand ist bei kleineren Bildschirmen
+}
+
+.table-compare {
+  margin: 3em auto 4em;
+
+  @include respond-to(bp-small-only) {
+    font-size: 0.8em;
+  }
+
+  tbody a:link, tbody a:visited {
+    color: $text-color-prim;
+  }
+
+  th, td {
+    padding: 0.5em 0.7em;
+  }
+
+  th {
+    font-weight: normal;
+    text-align: left;
+    max-width: 10em;
+  }
+
+  td {
+    text-align: center;
+    max-width: 12em;
+  }
+
+  thead {
+    color: $brand-color-prim;
+    font-size: 1.4em;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  tbody {
+    tr:nth-child(2n+1) {
+      background-color: rgba($gray-1,0.3);
+    }
+    tr:hover {
+      background-color: rgba($brand-color-prim,0.2);
+    }
+  }
+
+  .fa { // Farbpunkte größer darstellen 
+    font-size: 1.6em;
+  }
+
+  // Markierung um das aktuelle Produkt
+
+  $td-selected-border: 3px solid $brand-color-prim;
+
+  .td-selected {
+    border: $td-selected-border;
+    border-top: 0;
+    border-bottom: 0;
+  }
+
+  thead tr .td-selected {
+    border-top: $td-selected-border;
+  }
+
+  tbody tr:last-child .td-selected {
+    border-bottom: $td-selected-border;
+  }
+
+}

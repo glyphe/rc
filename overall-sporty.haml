@@ -2,7 +2,7 @@
 <!-- @include header -->
 
 %main.product-page
-	.shop
+	.shop-container
 		.shop-gallery
 			.shop-gallery-thumbs
 				%ul
@@ -26,27 +26,34 @@
 				%li Integrierte Hüfttasche zum Transport
 				%a.link-down(href="#features") Alle Features
 			
-			%h2 Farbe
+			%div
+				%div
+					%h2 Farbe
+					<span aria-hidden="true" class="icon_check_alt shop-color" style="color: #00a5c5;"></span>
+					<span aria-hidden="true" class="icon_check_alt shop-color" style="color: #00a5c5;"></span>
+					<span aria-hidden="true" class="icon_check_alt shop-color" style="color: #00a5c5;"></span>
+				%div
+					%h2 Größe
+					%select.size
+						%option Größe wählen
+						%option Small (S)
+						%option Medium (M)
+						%option Medium-Power (M-P)
+						%option Large (L)
+						%option Large (L-P)
+						%option X-Large (L)
+						%option X-Large-Power (XL-P)
+					%a.link-size(href="#") Welche Größe passt mir?
 
-			%h2 Größe
-			%select
-				%option Größe wählen
-				%option Small (S)
-				%option Medium (M)
-				%option Medium-Power (M-P)
-				%option Large (L)
-				%option Large (L-P)
-				%option X-Large (L)
-				%option X-Large-Power (XL-P)
-			%a(href="#") Welche Größe passt mir?
-
-			%p.price € 270,00
-			%p
-				inkl. MwSt.<br>Details zu Bezahlung, Versand und Rückgabe finden Sie <a href="#">hier</a>.
-			%a.btn-action(href="#") In den Warenkorb
+			%p.price 
+				%s € 270,00
+				€ 210,00
+			%p.price-details
+				inkl. MwSt., Details zu Bezahlung, Versand und Rückgabe finden Sie <a href="#">hier</a>.
+			%a.btn-action.btn-buy(href="#") In den Warenkorb
 
 
-	%section.sec-verwandlung
+	%section.sec-verwandlung#features
 		%h2
 			%img.headline-icon(src="<!-- @path icon_uhr.svg -->" width="50px")
 			Ruckzuck mit Ohne-Schuhe-Ausziehen
@@ -110,14 +117,14 @@
 
 		%div
 			%h3 Nach Benutzung
-			%ul.ul-features
+			%ul.ul-check
 				%li Verbleibende Wassertropfen mit der Hand abstreifen
 				%li Overall in einem ausreichend belüfteten Raum aufhängen
 				%li Alternativ mit einem Handtuch schnell trocken wischen
 
 		%div
 			%h3 Reinigen
-			%ul.ul-features
+			%ul.ul-check
 				%li Per Handwäsche oder Handwaschgang mit mildem Waschmittel waschen
 				%li Bei hartnäckigem Schmutz gelegentlich Maschinenwäsche (40 Grad) mit herkömmlichem Waschmittel und ohne Weichspüler
 				%li Chemische Reinigung möglich.
@@ -126,64 +133,67 @@
 			%h3 Trocken und Bügeln
 			%p Schonendes Trocknen im Wäschetrockner oder alternativ durch Bügeln auf niedriger Stufe reaktiviert die wasserabweisenden Eigenschaften der Imprägnierung auf der Außenseite des Stoffes: Von rechts (Außenseite) bügeln, dabei Plastikdetails (Kordelstopper, Reißverschlüsse, Reflexstreifen usw.) aussparen.
 
-	%section
-		%table
-			%tr
-				%th
-				%th Overall Parka
-				%th Overall Sporty
-			%tr
-				%th wasserdicht
-				%td 8.000 mm
-				%td 8.000 mm
-			%tr
-				%th winddicht
-				%td x
-				%td x
-			%tr
-				%th atmungsaktiv
-				%td RET 13,5
-				%td RET 13,5
-			%tr
-				%th Gewicht
-				%td 540–580 g
-				%td 430–560 g
-			%tr
-				%th Als Overall tragbar
-				%td x
-				%td x
-			%tr
-				%th Als Parka tragbar
-				%td x
-				%td o
-			%tr
-				%th Brusttasche
-				%td x
-				%td o
-			%tr
-				%th Belüftung
-				%td o
-				%td x
-			%tr
-				%th Tasche zum In-sich-Verstauen 
-				%td x
-				%td x
-			%tr
-				%th Ärmelabschluss
-				%td Ärmelbündchen mit Daumenloch
-				%td Gummibund
-			%tr
-				%th Größen<br><a href="#">Größentabelle</a>
-				%td S, M, L, XL, M-P, L-P, XL-P
-				%td S, M, L, XL, M-P, L-P, XL-P
-			%tr
-				%th Farben
-				%td
-					%i.fa.fa-circle
-					%i.fa.fa-circle
-					%i.fa.fa-circle
-				%td 
-					%i.fa.fa-circle
+	%section.sec-table
+		%table.table-compare
+			%thead
+				%tr
+					%td
+					%td 
+						%a(href="#")Overall Parka
+					%td.td-selected Overall Sporty
+			%tbody
+				%tr
+					%th wasserdicht
+					%td 8.000 mm
+					%td.td-selected 8.000 mm
+				%tr
+					%th winddicht
+					%td <span aria-hidden="true" class="icon_check_alt"></span>
+					%td.td-selected <span aria-hidden="true" class="icon_check_alt"></span>
+				%tr
+					%th atmungsaktiv
+					%td RET 13,5
+					%td.td-selected RET 13,5
+				%tr
+					%th Gewicht
+					%td 540–580 g
+					%td.td-selected 430–560 g
+				%tr
+					%th Als Overall tragbar
+					%td <span aria-hidden="true" class="icon_check_alt"></span>
+					%td.td-selected <span aria-hidden="true" class="icon_check_alt"></span>
+				%tr
+					%th Als Parka tragbar
+					%td <span aria-hidden="true" class="icon_check_alt"></span>
+					%td.td-selected <span aria-hidden="true" class="icon_close"></span>
+				%tr
+					%th Brusttasche
+					%td <span aria-hidden="true" class="icon_check_alt"></span>
+					%td.td-selected <span aria-hidden="true" class="icon_close"></span>
+				%tr
+					%th Belüftung
+					%td <span aria-hidden="true" class="icon_close"></span>
+					%td.td-selected <span aria-hidden="true" class="icon_check_alt"></span>
+				%tr
+					%th Tasche zum In-sich-Verstauen 
+					%td <span aria-hidden="true" class="icon_check_alt"></span>
+					%td.td-selected <span aria-hidden="true" class="icon_check_alt"></span>
+				%tr
+					%th Ärmelabschluss
+					%td Ärmelbündchen mit Daumenloch
+					%td.td-selected Gummibund
+				%tr
+					%th Größen<br><a href="#">Größentabelle</a>
+					%td S, M, L, XL, M-P, L-P, XL-P
+					%td.td-selected S, M, L, XL, M-P, L-P, XL-P
+				%tr
+					%th Farben
+					%td
+						%i.fa.fa-circle(style="color: #ff0000;")
+						%i.fa.fa-circle(style="color: #2e3192;")
+						%i.fa.fa-circle(style="color: #1a1a1a;")
+					%td.td-selected 
+						%i.fa.fa-circle(style="color: #00a5c5;")
 
 
 <!-- @include footer -->

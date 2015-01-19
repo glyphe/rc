@@ -1,8 +1,97 @@
 <!-- $title Raincombi – Dress smart, stay dry -->
 <!-- @include header -->
 
-%main
+%main.home-page
 
-	Content
+	%section.sec-keyvisual
+		%picture
+			<source media="(min-width: 1400px)" srcset="<!-- @path keyvisual_1400px --> 1x">
+			<source media="(min-width: 900px)" srcset="<!-- @path keyvisual_900px --> 1x">
+			<source media="(min-width: 600px)" srcset="<!-- @path keyvisual_600px --> 1x">
+			<img src="<!-- @path keyvisual_600px -->" alt="Es gibt nix schlaueres">
+
+	%section.sec-feature-list
+		%h2 Im RAINCOMBI Overall bleibst du trocken und genießt das Leben auch bei Regen.
+		.flex-grid-container
+			%div
+				%img.icon-drop(src="<!-- @path icon_drop-rad -->")
+				%h3 Radfahren
+				%p Am Weg ins Büro, in der Freizeit einfach losradeln und trocken ankommen.
+			%div
+				%img.icon-drop(src="<!-- @path icon_drop-mofa -->")
+				%h3 Mofa
+				%p Freie Fahrt durch die Pfütze. Fröhlich vorbei an jedem spritzenden Auto …
+			%div
+				%img.icon-drop(src="<!-- @path icon_drop-segway -->")
+				%h3 E-Mobility
+				%p Trendy am E-Bike und trendy trocken am Pedelec, Segway oder Robstep.
+			%div
+				%img.icon-drop(src="<!-- @path icon_drop-wandern -->")
+				%h3 Wandern
+				%p Naturfreunde und Wanderer kommen bei Regen jetzt richtig auf Trab.
+			%div
+				%img.icon-drop(src="<!-- @path icon_drop-nordic-walking -->")
+				%h3 Nordic Walking
+				%p Gib dem Schweinehund Regen keine Chance. Dein Wohlbefinden dankt.
+
+	%section.sec-shop-overview
+		%section
+			%img.icon-eu-made(src="<!-- @path icon_eu-made.svg -->")
+			%a(href="#")
+				%img.img-shop(src="<!-- @path parka-shop-vorne -->")
+			%a(href="#")
+				%h2 Overall Parka
+			%ul.ul-features
+				%li Unisex, in drei Farben erhältlich
+				%li Ein Unterscheidungsmerkmal
+				%li Noch ein Feature
+			%a.btn(href="#") Infos & Kaufen
+		%section
+			%img.icon-eu-made(src="<!-- @path icon_eu-made.svg -->")
+			%a(href="<!-- @path overall-sporty -->")
+				%img.img-shop(src="<!-- @path sporty-verwandlung-4 -->")
+			%a(href="<!-- @path overall-sporty -->")
+				%h2 Overall Sporty
+			%ul.ul-features
+				%li Unisex, in drei Farben erhältlich
+				%li Ein Unterscheidungsmerkmal
+				%li Noch ein Feature
+			%a.btn(href="<!-- @path overall-sporty -->") Infos & Kaufen
+
+	%section.sec-text-features
+		%div
+			%h2 In 30 Sekunden drin
+			%p Anziehen ohne Schuhe ausziehen. Der patentierte Schnitt machts möglich. Reinschlüpfen, drei Reißverschlüsse schließen – fertig! In der integrierten Tasche verstaut wird dein RAINCOMBI Overall zur leichten Rolle. 
+
+		%div
+			%h2 Rundum sicher
+			%p Ideal für Radfahrer. Die Kapuze über den Helm ziehen und mit Gummizügen exakt justieren: Kopfbewegungen und seitliche Sicht bleiben frei. Reflektorstreifen für gute Sichtbarkeit, verstellbare Hosenbeinbreite. 
+
+		%div
+			%h2 Saubere Sache
+			%p Die Overalls werden in Europa fair produziert. Europäische Materialien mit Öko-Tex 100 Zertifikat. Wasserdichte umweltschonende Innenbeschichtung ohne Verwendung giftiger Fluorcarbone PFOA/PFOS.
+
+	%section.sec-big-quote
+		%p.big-quote „Schlechtes Wetter gibt es nicht, nur schlechte Ausrüstung.“
+		%p.big-quote-source (Alte Pfadfinderweisheit)
+
+	%section.sec-reviews
+		%p.review-quote „Ideal für Radfahrer. Die Kapuze kann auch über einen Helm gezogen werden und wird mit Gummizügen exakt justiert: Kopfbewegungen und seitliche Sicht bleiben frei. Reflektorstreifen sorgen für gute Sichtbarkeit, die verstellbare Breite der Hosenbeine schützt vor Kettenkontakt.“
+		%p.review-person Günter Maierdorfer, Fahrrad-Freak
+
+	%section
+		%section.sec-find-reseller
+			%h2	Händler finden
+			%p RAINCOMBI ganz einfach bei einem Händler in der Nähe anprobieren und kaufen.
+			%a.btn(href="#") Unsere Händler
+		%section.sec-find-reseller
+			%h2	Verkaufspartner werden
+			%p Ob Bikeshop, Sportgeschäft oder Hotelboutique … auch deine Kunden profitieren von RAINCOMBI. 
+			%a.btn(href="#") Partner werden
+
+
+
+
+
 
 <!-- @include footer -->
