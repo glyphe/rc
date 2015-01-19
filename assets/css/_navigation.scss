@@ -10,27 +10,67 @@ nav ul {
 nav {
   a:link, a:visited {
     text-decoration: none;
-    transition: 0.3s ease-in-out all;
+    @include transition(all 0.3s ease-out);
+    @include respond-to(bp-small-only) {
+      color: $background-color;
+      font-weight: 400;
+    }
   }
 }
 
-.nav-meta {
-  a:link, a:visited {
-    color: $brand-color-sec;
-  }
-  a:hover {
-    color: $brand-color-prim;
+// ## Handheld-Navi ##
+.handheld-navi {  // Menü-Button
+  position: absolute;
+  top: 0.8em;
+  right: 0.7em;
+
+  @include respond-to(bp-medium) {
+    display: none; // Ausblende ab bp-Medium
   }
 }
+
+.handheld-navi-link {
+  @extend .btn;
+  background-color: $gray-2;
+
+  &:after {
+    font-family: 'FontAwesome';
+    content: $fa-var-bars;
+  }
+}
+
 
 // ## Hauptnavigation ##
+
+header nav {
+  @include respond-to(bp-small-only) {  // Reihenfolge der Navigation bei Handy ändern
+    @include display(flex);
+    @include flex-flow(column);
+    background-color: lighten($background-color-footer, 10%);
+    padding: 0.5em 0;
+  }
+}
+
 .nav-main,
 .nav-meta {
-  @include respond-to(bp-small-only) {
-    font-size: 1.2em;
-    margin-left: 2.2em;
-    display: flex;
-    flex-flow: column;
+  
+  a:link, a:visited {
+    @include respond-to(bp-small-only) {
+      display: block;
+      font-size: 1.2em;
+      padding: 0.2em 0 0.3em 2.6em;  // 2.6em um auf einer Linie mit dem Logo einrücken
+    }
+  }
+
+  a:hover {
+    background-color: rgba($background-color,0.2);
+  }
+
+  a.current:link, a.current:visited {
+    @include respond-to(bp-small-only) {
+      background-color: rgba($background-color,0.6);
+      color: $background-color-footer;
+    }
   }
 
   @include respond-to(bp-large) {
@@ -38,19 +78,44 @@ nav {
   }
 
   li {
-    margin-right: 0.3em;
-    &:last-child {
-      margin-right: none;
+    @include respond-to(bp-medium) {
+      margin-right: 0.3em;
+      &:last-child {
+        margin-right: none;
+      }
     }
   }
   .fa {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 
 .nav-meta {
+  @include respond-to(bp-medium-only) {
+    position: absolute;
+    top: 1em;
+    right: $inner-distance;
+    width: 55%;
+    text-align: right;
+    line-height: 1.6;
+  }
+  @include respond-to(bp-medium) {
+    font-size: 0.8em;
+  }
+
+  a:link, a:visited {
+    @include respond-to(bp-medium) {
+      color: $brand-color-sec;
+    }
+  }
+  a:hover {
+    @include respond-to(bp-medium) {
+      color: $brand-color-prim;
+    }
+  }
+
   @include respond-to(bp-small-only) {
-    order: 2;
+    @include order(2);  // Navi bei Handhelds unter Hauptnavi
   }
 
   @include respond-to(bp-medium) {
@@ -59,19 +124,82 @@ nav {
     }
   }
 
-  @include respond-to(bp-large) {
-    font-size: 0.8em;
-  }
 }
 
 .nav-main {
   font-weight: 600;
+
+  a.current:link, a.current:visited {
+    color: $background-color-footer;
+  }
+
   ul li {
     @include respond-to(bp-medium) {
       display: inline-block;
     }
   }
   @include respond-to(bp-medium) {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    margin-top: 0.7em;
+  }
+
+  @include respond-to(bp-medium-only) {
+    text-align: right;
+    margin: 0;
+    font-size: 1.4em;
   }
 }
+
+// ## Sprachauswahl ##
+
+.language-select {
+  border: 2px solid $brand-color-sec;
+  border-radius: 4px;
+  line-height: 1;
+  font-size: 0.9em;
+
+  a:link, a:visited {
+    line-height: 1;
+    padding: 0 4px 1px;
+    display: inline-block;
+  }
+  a:hover {
+    background-color: $brand-color-prim;
+    color: $background-color;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+}
+
+a.language-current:link, a.language-current:visited {
+  background-color: $brand-color-sec;
+  color: $background-color;
+}
+
+// ## Footer-Navigation ##
+
+.nav-footer {
+  @include respond-to(bp-medium-only) {
+    border-bottom: 2px solid $background-color;
+    padding-bottom: 1.3em;
+  }
+
+  li {
+    @include respond-to(bp-medium-only) {
+      display: inline;  // Links nebeneinader anordnen
+      line-height: 1.5;
+      &:after {
+        content: "|";
+        color: rgba($background-color,0.5);
+      }
+      &:last-child:after {
+        content: none;
+      }
+    }
+  }
+}
+

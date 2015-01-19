@@ -1,13 +1,13 @@
 <!-- $title Raincombi – Dress smart, stay dry -->
 <!-- @include header -->
 
-%main.home-page
+%main.page-home
 
 	%section.sec-keyvisual
 		%picture
-			<source media="(min-width: 1400px)" srcset="<!-- @path keyvisual_1400px --> 1x">
-			<source media="(min-width: 900px)" srcset="<!-- @path keyvisual_900px --> 1x">
-			<source media="(min-width: 600px)" srcset="<!-- @path keyvisual_600px --> 1x">
+			<source media="(min-width: 900px)" srcset="<!-- @path keyvisual_1400px --> 1x">
+			<source media="(min-width: 600px)" srcset="<!-- @path keyvisual_900px --> 1x">
+			<source media="(min-width: 320px)" srcset="<!-- @path keyvisual_600px --> 1x">
 			<img src="<!-- @path keyvisual_600px -->" alt="Es gibt nix schlaueres">
 
 	%section.sec-feature-list
@@ -76,10 +76,12 @@
 		%p.big-quote-source (Alte Pfadfinderweisheit)
 
 	%section.sec-reviews
+		%a.slider-link.slider-link-left <span aria-hidden="true" class="arrow_carrot-left_alt"></span>
+		%a.slider-link.slider-link-right <span aria-hidden="true" class="arrow_carrot-right_alt"></span>
 		%p.review-quote „Ideal für Radfahrer. Die Kapuze kann auch über einen Helm gezogen werden und wird mit Gummizügen exakt justiert: Kopfbewegungen und seitliche Sicht bleiben frei. Reflektorstreifen sorgen für gute Sichtbarkeit, die verstellbare Breite der Hosenbeine schützt vor Kettenkontakt.“
-		%p.review-person Günter Maierdorfer, Fahrrad-Freak
+		%p.review-name Günter Maierdorfer, Fahrrad-Freak
 
-	%section
+	%section.sec-bottom-links
 		%section.sec-find-reseller
 			%h2	Händler finden
 			%p RAINCOMBI ganz einfach bei einem Händler in der Nähe anprobieren und kaufen.

@@ -11,6 +11,11 @@
       @content;
     }
   }
+@else if $media == bp-medium-only {
+    @media only screen and (min-width: $bp-medium) and (max-width: $bp-large - 1) {
+      @content;
+    }
+  }
   @else if $media == bp-large {
     @media only screen and (min-width: $bp-large) {
       @content;

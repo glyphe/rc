@@ -1,9 +1,13 @@
 // FOOTER
 
 footer {
-  padding: 1em $inner-distance;
+  padding: 3em $inner-distance 1.5em;
   background: $background-color-footer;
   color: $background-color;
+  border-top: 0.5em solid $background-color;
+  font-size: 0.9em;
+  font-weight: 300;
+
   a:link, a:visited {
     color: $background-color;
     text-decoration: none;
@@ -11,9 +15,7 @@ footer {
   a:hover, a:focus {
     color: lighten($background-color-footer, 40%);
   }
-}
 
-footer {
   ul {
     padding: 0;
     margin: 0;
@@ -21,8 +23,41 @@ footer {
     line-height: 1.2;
   }
   li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.7em;
   }
+  h4 {
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+    font-weight: 600;
+    font-style: italic;
+  }
+  .fa {
+    font-size: 1.2em;
+  }
+
+  input {
+    max-width: 15em;
+    background-color: rgba($background-color,0.3);
+    border-color: $background-color;
+    color: $background-color-footer;
+    @include placeholder {
+      color: $background-color;
+      font-weight: 300;
+    }
+    &:focus {
+      background-color: rgba($background-color,0.5);
+    }
+    &[type^="submit"] {
+      border: none;
+      background-color: $background-color;
+      font-weight: 600;
+    &:hover {
+      background-color: rgba($background-color,0.8);
+    }
+    &:active {}
+  }
+  }
+
 }
 
 footer .container {
@@ -35,7 +70,11 @@ footer .container {
     @include respond-to(bp-medium) {
       @include span-columns(6);
     }
-
+    @include respond-to(bp-medium-only) {
+      &:first-child {
+        @include span-columns(12);
+      }
+    }
     @include respond-to(bp-large) {
       @include span-columns(4);
     }
@@ -44,7 +83,8 @@ footer .container {
 
 .ul-footer-credits {
   border-top: 2px solid $background-color;
-  padding: 1em 0 0;
+  padding: 1.3em 0 0;
+  font-size: 0.85em;
 
   > li {
       display: inline-block;

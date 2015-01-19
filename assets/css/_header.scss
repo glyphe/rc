@@ -1,0 +1,34 @@
+header {
+  background-color: rgb(230, 230, 230);
+  padding: 1em 0 0;
+  @include respond-to(bp-medium) {
+    padding: 1em $inner-distance;
+  }
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4); 
+
+  @include respond-to(bp-large) {
+    @include display(flex);
+    @include align-items(flex-end);
+    @include justify-content(space-between);
+    padding: 1.5em $inner-distance;
+  }
+}
+
+.logo {
+  width: 10em;
+  margin-bottom: 0.8em;
+  
+  @include respond-to(bp-small-only) {
+    margin-left: 0.5em;
+  }
+
+  @include respond-to(bp-medium) {
+    width: 12em;
+    margin-left: -0.8em;
+  }
+
+  @include respond-to(bp-large) {
+    width: 13em;
+    margin-bottom: 0;
+  }
+}

@@ -7,3 +7,15 @@
 body {
   background-color: $background-color;
 }
+
+.handhelds-hide { // Links in Meta-Nav bei kleiner Auflösung ausblenden
+  @include respond-to(bp-small-only) {
+    display: none;
+  }
+}
+
+.bp-medium-hide { // Links in Meta-Nav bei kleiner Auflösung ausblenden
+  @include respond-to(bp-medium-only) {
+    display: none !important;
+  }
+}
