@@ -28,6 +28,7 @@ textarea {
 
 select {
   @extend input;
+  margin: 0;
 }
 
 nav select { // Sprachauswahl 

@@ -1,12 +1,10 @@
 .btn {
   display: inline-block;
   margin: 0.2em 0.5em 0.2em 0;
-  padding: 0.4em 0.8em 0.4em;
+  padding: 0.3em 0.8em 0.5em;
   background-color: $brand-color-prim;
   border-radius: 4px;
-  text-transform: uppercase;
   font-weight: 400;
-  letter-spacing: 1px;
   @include transition(background-color 0.2s ease-out);
 
   &:link, &:visited {
@@ -22,13 +20,17 @@
 
 .btn-action {
   @extend .btn;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1px;
   &:link, &:visited {}
   &:hover, &:active, &:focus {}
 }
 
 .btn-buy {
-  font-size: 1.2em;
+  font-size: 1em;
   text-align: center;
+  padding-bottom: 0.4em;
 
 
   &:before {

@@ -22,6 +22,32 @@ section {
   }
 }
 
+.callout-bar {
+  padding: 1em $inner-distance*2;
+  text-align: center;
+  background-color: $brand-color-prim;
+  color: $background-color;
+  font-size: 0.9em;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.callout-bar-close {
+  position: absolute;
+  top: 0.7em;
+  right: 0.5em;
+  font-size: 1.4em;
+
+  &:link, &:visited {
+    color: $background-color;
+    text-decoration: none;
+    @include transition(color 0.3s ease-out)
+  }
+  &:hover {
+    color: lighten($background-color-footer,50%);
+  }
+}
+
 
 // ###############
 // ## HOME-PAGE ##
@@ -393,7 +419,7 @@ li.thumb-active {
 
   h2 {  // Zwischenüberschriften bei den Details
     margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
     text-transform: uppercase;
     font-style: normal;
     color: $text-color-prim;
