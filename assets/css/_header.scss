@@ -4,13 +4,17 @@ header {
   @include respond-to(bp-medium) {
     padding: 1em $inner-distance;
   }
+  @include respond-to(bp-large) {
+    padding: 1.5em $inner-distance 2em;
+  }
   box-shadow: 0 1px 3px rgba(0,0,0,0.4); 
 
-  @include respond-to(bp-large) {
-    @include display(flex);
-    @include align-items(flex-end);
-    @include justify-content(space-between);
-    padding: 1.5em $inner-distance;
+  .inner-wrapper {
+    @include respond-to(bp-large) {
+      @include display(flex);
+      @include align-items(flex-end);
+      @include justify-content(space-between);
+    }
   }
 }
 

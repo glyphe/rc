@@ -2,10 +2,16 @@
 
 footer {
   padding: 3em $inner-distance 1.5em;
+  @include respond-to(bp-small-only) {
+    padding-top: 1.5em;
+  }
   background: $background-color-footer;
   color: $background-color;
   border-top: 0.5em solid $background-color;
   font-size: 0.9em;
+  @include respond-to(bp-small-only) {
+    font-size: 1.1em;
+  }
   font-weight: 300;
 
   a:link, a:visited {
@@ -36,7 +42,9 @@ footer {
   }
 
   input {
-    max-width: 15em;
+    @include respond-to(bp-medium) {
+      max-width: 15em;
+    }
     background-color: rgba($background-color,0.3);
     border-color: $background-color;
     color: $background-color-footer;

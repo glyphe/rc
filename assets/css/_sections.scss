@@ -11,6 +11,8 @@ main {
 
 
 section {
+  padding: 0 $inner-distance;
+
   p {
     margin: 0;
     padding-bottom: 1em;
@@ -54,16 +56,20 @@ section {
 // ###############
 
 section.sec-keyvisual {
+  padding: 0;
   img {
     width: 100%;
   }
 }
 
 section.sec-feature-list {
-  @include outer-container;
   background: $section-background;
   padding: 1em $inner-distance 2em;
   text-align: center;
+
+  .inner-wrapper {
+    @include outer-container;
+  }
 
   h2 {
     font-size: 1.5em;
@@ -159,7 +165,7 @@ section.sec-shop-overview {
     margin: 1em auto;
   }
 
-  > section {
+  section {
     padding: 2em $inner-distance;
     border-top: 0.5em solid $background-color;
     position: relative;  // Als Referenz für Eu-Made-Icons
@@ -210,25 +216,46 @@ section.sec-reviews {
     padding: 3em $inner-distance 2em;
   }
   text-align: center;
-  position: relative;
+
+  .inner-wrapper {
+    position: relative; // Referenz für Pfeile
+  }
 }
 
 .slider-link {
   position: absolute;
   font-size: 2em;
-  top: 3.5em;
+  top: 2.5em;
   @include respond-to(bp-medium) {
-    top: 2.4em;
+    top: 1.2em;
   }
-  color: $gray-1;
+
+  &:link, &:visited {
+    @include transition(color 0.3s ease-out);
+    color: $gray-1;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: rgba($brand-color-prim,0.7);
+  }
+  &:active {
+    color: $brand-color-prim;
+  }
 }
 
 .slider-link-left {
-  left: 5%;
+  left: 0;
+  @include respond-to(bp-xlarge) {
+    left: 10%;
+  }
 }
 
 .slider-link-right {
-  right: 5%;
+  right: 0;
+  @include respond-to(bp-xlarge) {
+    right: 10%;
+  }
 }
 
 .review-quote {
@@ -316,12 +343,17 @@ section.sec-bottom-links {
   text-align: inherit;
 
   @include respond-to(bp-large) {
-    @include outer-container;
     padding: 1em $inner-distance;
     background: url(../img/shop-bg-big.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .inner-wrapper {
+    @include respond-to(bp-large) {
+      @include outer-container;
+    }
   }
 
 }
@@ -337,11 +369,14 @@ section.sec-bottom-links {
   background-size: cover;
   @include outer-container;
 
-
   @include respond-to(bp-large) {
     background: none;
     @include span-columns(6);
   }
+  @include respond-to(bp-xlarge) {
+    @include span-columns(7);
+  }
+
 }
 
 .shop-gallery-thumbs {
@@ -360,7 +395,7 @@ section.sec-bottom-links {
     }
     border-radius: 5px;
     padding: 5px;
-    margin: 10px 0;
+    margin: 0 0 0.7em;
   }
   img {
     height: 100%;
@@ -401,24 +436,35 @@ li.thumb-active {
     border-radius: 10px;
   }
 
+  @include respond-to(bp-xlarge) {
+    @include span-columns(5);
+  }
+
   > div {
-    @include respond-to(bp-xlarge) { // Preis und Größe zweispaltig darstellen
+    @include respond-to(bp-large) { // Preis und Größe zweispaltig darstellen
       @include row(); // cleart nach dem Block
       margin-bottom: 1em;
 
-      > div {
-        @include span-columns(3 of 6);
+      > div:first-child { // Preis
+        @include span-columns(2 of 6);
+      }
+      > div:last-child { // Größe
+        @include span-columns(4 of 6);
       }
     }
   }
 
+  @include respond-to(bp-large) {
+    font-size: 0.9em; // kleinere Schrift bei Zweispaltiger Darstellung des 
+  }
 
   h1 {
     line-height: 1;
+    font-size: 2em;
   }
 
   h2 {  // Zwischenüberschriften bei den Details
-    margin-top: 0.5em;
+    margin-top: 1.2em;
     margin-bottom: 0.8em;
     text-transform: uppercase;
     font-style: normal;
@@ -533,12 +579,14 @@ section.sec-verwandlung {
 }
 
 section.sec-belueftung {
-  @include respond-to(bp-medium) {
-    @include outer-container;
-    @include display(flex);  // zum vertikalen zentrieren
+  .inner-wrapper {
+    @include respond-to(bp-medium) {
+      @include outer-container;
+      @include display(flex);  // zum vertikalen zentrieren
+    }
   }
 
-  > div:first-child {
+  .inner-wrapper > div:first-child {
     @include respond-to(bp-medium) {
       @include span-columns(6);
       margin-top: auto; // vertikal zentrieren
@@ -548,7 +596,7 @@ section.sec-belueftung {
       @include span-columns(8);
     }
   }
-  > div:last-child {
+  .inner-wrapper > div:last-child {
     @include respond-to(bp-medium) {
       @include span-columns(6);
     }
@@ -560,14 +608,17 @@ section.sec-belueftung {
 
 section.sec-kapuze {
   padding-top: 2em;
-  @include respond-to(bp-medium) {
-    @include outer-container;
-    @include row($direction: RTL);  // Änderung der Reihenfolge der Container von Rechts nach links
-    @include display(flex);  // zum vertikalen zentrieren
-    @include flex-direction(row-reverse);
+
+  .inner-wrapper {
+    @include respond-to(bp-medium) {
+      @include outer-container;
+      @include row($direction: RTL);  // Änderung der Reihenfolge der Container von Rechts nach links
+      @include display(flex);  // zum vertikalen zentrieren
+      @include flex-direction(row-reverse);
+    }
   }
 
-  > div:first-child {
+  .inner-wrapper > div:first-child {
     @include respond-to(bp-medium) {
       @include span-columns(6);
       margin-top: auto; // vertikal zentrieren
@@ -577,7 +628,7 @@ section.sec-kapuze {
       @include span-columns(8);
     }
   }
-  > div:last-child {
+  .inner-wrapper > div:last-child {
     @include respond-to(bp-medium) {
       @include span-columns(6);
     }
@@ -591,11 +642,14 @@ section.sec-kapuze {
 
 section.sec-small-feature-container {
   padding: 0;
-  @include respond-to(bp-large) {
-    @include outer-container;
-    @include row(table);
+
+  .inner-wrapper {
+    @include respond-to(bp-large) {
+      @include outer-container;
+      @include row(table);
+    }
   }
-  > section {
+  section {
     @include respond-to(bp-large) {
       @include span-columns(6);
     }
@@ -653,7 +707,12 @@ section.sec-text-features {
     padding-top: 4em;
     padding-bottom: 4em;
     font-size: 0.9em;
-    @include outer-container;
+  }
+
+  .inner-wrapper {
+    @include respond-to(bp-large) {
+      @include outer-container;
+    }
   }
 
   .headline-icon {
@@ -664,7 +723,7 @@ section.sec-text-features {
     margin-top: 1em;
   }
   
-  > div {
+  .inner-wrapper > div {
     @include respond-to(bp-large) {
       @include span-columns(4);    
     }
@@ -763,6 +822,81 @@ section.sec-table {
 
   tbody tr:last-child .td-selected {
     border-bottom: $td-selected-border;
+  }
+
+}
+
+
+// #################
+// #### HÄNDLER ####
+// #################
+
+.page-haendler {
+  margin: 2em 0 4em;
+}
+
+.nav-haendler {
+  @include respond-to(bp-small-only) {
+    display: none; // Bei kleiner Auflösung ausblenden
+  }
+
+  li {
+    display: inline-block;
+    margin-top: 0.2em;
+
+    &:after {
+      content: "|";
+      color: $gray-1;
+    }
+    &:last-child:after {
+      content: none;
+    }
+  }
+}
+
+section.haendler-verzeichnis {
+
+  .inner-wrapper > div {
+    @include outer-container;
+  }
+  .inner-wrapper > div > div {
+    @include respond-to(bp-medium-only) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+    @include respond-to(bp-large-only) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+    @include respond-to(bp-xlarge) {
+      @include span-columns(3);
+      @include omega(4n);
+    }
+  }
+
+  h2 {
+    border-bottom: 3px solid $brand-color-prim;
+    padding-bottom: 3px;
+    margin-top: 0.5em;
+    font-size: 1.5em;
+    position: relative;
+
+    // Aufklapp-Pfeil bei Handhelds einblenden
+    &:after {
+      @include respond-to(bp-small-only) {
+        font-family: "ElegantIcons";
+        content: '\47';
+        font-style: normal;
+        position: absolute;
+        right: 0;
+        font-weight: normal;
+      }
+    }
+  }
+  h4 {
+    @include respond-to(bp-medium) {
+      margin-top: 1em;  
+    }
   }
 
 }

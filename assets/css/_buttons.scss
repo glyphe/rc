@@ -31,7 +31,12 @@
   font-size: 1em;
   text-align: center;
   padding-bottom: 0.4em;
-
+  
+  @include respond-to(bp-small-only) {
+    margin-top: 0.5em;
+    width: 100%;
+    font-size: 1.2em;
+  }
 
   &:before {
     font-family: "ElegantIcons";

@@ -11,13 +11,18 @@
       @content;
     }
   }
-@else if $media == bp-medium-only {
+  @else if $media == bp-medium-only {
     @media only screen and (min-width: $bp-medium) and (max-width: $bp-large - 1) {
       @content;
     }
   }
   @else if $media == bp-large {
     @media only screen and (min-width: $bp-large) {
+      @content;
+    }
+  }
+  @else if $media == bp-large-only {
+    @media only screen and (min-width: $bp-large) and (max-width: $bp-xlarge - 1) {
       @content;
     }
   }

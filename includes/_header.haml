@@ -17,14 +17,15 @@
 	%body
 
 		%header
-			%a(href="<!-- @path index -->")
-				%img.logo(src="<!-- @path raincombi-logo-slogan -->" alt="RAINCOMBI – Dress smart, stay dry")
-			.handheld-navi
-				/ .handheld-navi-lang
-				/ 	%form
-				/ 		%select
-				/ 			%option DE
-				/ 			%option EN
-				%a.handheld-navi-link(href="#")
-					Menü
-			<!-- @include _nav -->
+			.inner-wrapper
+				%a(href="<!-- @path index -->")
+					%img.logo(src="<!-- @path raincombi-logo-slogan -->" alt="RAINCOMBI – Dress smart, stay dry")
+				.handheld-navi
+					/ .handheld-navi-lang
+					/ 	%form
+					/ 		%select
+					/ 			%option DE
+					/ 			%option EN
+					%a.handheld-navi-link(href="#")
+						Menü
+				<!-- @include _nav -->

@@ -20,13 +20,14 @@ body {
 }
 
 ::selection {
-  background: $brand-color-prim;
+  background: rgba($brand-color-prim,0.7);
   color: $brand-color-sec;
 }
 
 h1 {
   font-style: italic;
   font-weight: 600;
+  margin-bottom: 0.5em;
 }
 
 h2 {
