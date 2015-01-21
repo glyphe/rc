@@ -7,7 +7,7 @@ header {
   @include respond-to(bp-large) {
     padding: 1.5em $inner-distance 2em;
   }
-  box-shadow: 0 1px 3px rgba(0,0,0,0.4); 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 
   .inner-wrapper {
     @include respond-to(bp-large) {

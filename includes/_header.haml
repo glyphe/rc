@@ -13,6 +13,10 @@
 		<script src="//use.typekit.net/xbl5zgc.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 		<!-- @stylesheet style -->
+		<!-- @javascript jquery-1.8.3.min -->
+		<!-- @javascript hide-nav -->		
+		
+		
 
 	%body
 
@@ -20,12 +24,12 @@
 			.inner-wrapper
 				%a(href="<!-- @path index -->")
 					%img.logo(src="<!-- @path raincombi-logo-slogan -->" alt="RAINCOMBI – Dress smart, stay dry")
-				.handheld-navi
+				.handheld-nav
 					/ .handheld-navi-lang
 					/ 	%form
 					/ 		%select
 					/ 			%option DE
 					/ 			%option EN
-					%a.handheld-navi-link(href="#")
+					%a.handheld-nav-button(href="#")
 						Menü
 				<!-- @include _nav -->

@@ -19,7 +19,8 @@ nav {
 }
 
 // ## Handheld-Navi ##
-.handheld-navi {  // Menü-Button
+
+.handheld-nav {  // Menü-Button
   position: absolute;
   top: 0.8em;
   right: 0.7em;
@@ -29,7 +30,7 @@ nav {
   }
 }
 
-.handheld-navi-link {
+.handheld-nav-button {
   @extend .btn;
   background-color: $gray-2;
 
@@ -39,6 +40,15 @@ nav {
   }
 }
 
+.nav-header {
+  @include respond-to(bp-small-only) {
+    display: none;  // Standard Ausblenden der Navigation bei Handhelds
+  }
+}
+
+.nav-expand {  // Um Menü wieder einzublende auf Handhelds
+  @include display(flex); // weil Reihenfolge von main und meta vertauscht werden
+}
 
 // ## Hauptnavigation ##
 
@@ -179,6 +189,8 @@ a.language-current:link, a.language-current:visited {
   background-color: $brand-color-sec;
   color: $background-color;
 }
+
+
 
 // ## Footer-Navigation ##
 
