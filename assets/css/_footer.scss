@@ -1,6 +1,6 @@
 // FOOTER
 
-footer {
+.page-footer {
   padding: 3em $inner-distance 1.5em;
   @include respond-to(bp-small-only) {
     padding-top: 1.5em;
@@ -68,7 +68,7 @@ footer {
 
 }
 
-footer .container {
+.page-footer .container {
   @include respond-to(bp-medium) {
     @include outer-container;
   }
@@ -89,7 +89,7 @@ footer .container {
   }
 }
 
-.ul-footer-credits {
+ul.ul-footer-credits {
   border-top: 2px solid $background-color;
   padding: 1.3em 0 0;
   font-size: 0.85em;

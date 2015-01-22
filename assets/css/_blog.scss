@@ -1,0 +1,37 @@
+.site-content {
+	padding: 0 $inner-distance;
+	@include outer-container;
+}
+
+.content-area {
+	@include respond-to(bp-large) {
+		@include span-columns(9);
+	}
+	@include respond-to(bp-xlarge) {
+		@include span-columns(8);
+	}
+}
+
+
+
+// #############
+// ## SIDEBAR ##
+// #############
+
+.widget-area {
+	@include outer-container;
+	
+	@include respond-to(bp-large) {
+		@include span-columns(3);
+	}
+	@include respond-to(bp-xlarge) {
+		@include shift(1);
+	}
+
+	> aside {  // Mehrspaltige Widget-Area
+		@include respond-to(bp-medium-only) {
+			@include span-columns(6);
+  			@include omega(2n);
+  		}
+	}
+}

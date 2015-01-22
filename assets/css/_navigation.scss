@@ -73,7 +73,9 @@ header nav {
   }
 
   a:hover {
-    background-color: rgba($background-color,0.2);
+    @include respond-to(bp-small-only) {
+      background-color: rgba($background-color,0.2);
+    }
   }
 
   a.current:link, a.current:visited {
