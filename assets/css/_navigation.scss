@@ -7,7 +7,7 @@ nav ul {
 }
 
 // ## Links ##
-nav {
+.nav-header {
   a:link, a:visited {
     text-decoration: none;
     @include transition(all 0.3s ease-out);

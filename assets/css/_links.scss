@@ -1,5 +1,6 @@
 a:link, a:visited {
   color: $brand-color-prim;
+  @include transition(0.3s all ease-out);
 }
 
 a:hover {
@@ -13,12 +14,15 @@ a:active, a:focus {}
 .link-down {
 	display: block;
 	margin-top: 1em;
-	text-decoration: none;
 
-	&:after {
+	a:link, a:visited {
+		text-decoration: none;
+	}
+	a:link:after {
 		font-family: "ElegantIcons";
 		content: "\3b";
 		margin-left: 0.2em;
-
+		position: relative;
+		top: 0.1em;
 	}
 }

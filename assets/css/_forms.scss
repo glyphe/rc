@@ -1,25 +1,72 @@
-label {}
+label {
+  font-weight: 600;
+}
 
 input {
+  -webkit-appearance: none; // reset
   font-family: $font-family;
-  -webkit-border-radius: 0;
   width: 100%;
   border: 2px solid $text-color-prim;
   color: $text-color-prim;
   padding: 0.3em 0.5em 0.4em;
   margin: 0.5em 0;
   border-radius: 5px;
+  background-color: $background-color;
   @include transition(background-color 0.2s ease-out);
 
   @include placeholder {
+    color: $gray-2;
   }
+  &:hover {
+    border-color: darken($brand-color-prim,10%);
+  }
+
   &:focus {
     outline: none;
+    background-color: rgba($brand-color-prim, 0.05);
+    border-color: $brand-color-prim;
   }
+
+
+  // SUBMIT-BUTTONS
   &[type^="submit"] {
-    &:hover {}
-    &:active {}
+    border: none;
+    background-color: $brand-color-prim;
+    font-weight: 600;
+    color: $background-color;
+    padding: 0.4em 1em 0.5em;
+
+    @include respond-to(bp-small-only) {
+      font-size: 1.2em;
+      padding: 0.5em 1em 0.7em;
+    }
+    @include respond-to(bp-medium) {
+      width: auto;
+    }
+
+    &:hover {
+      background-color: $background-color-footer;
+    }
+    &:active {
+      background-color: $text-color-prim;
+    }
   }
+
+  // SUCH-FELD
+  &[type="search"] {
+    -webkit-appearance: none; // reset
+    box-sizing: border-box; // Reset für normalize (setzt content-box, warum auch immer)
+
+    // Lupen-Icon einfügen
+    @include placeholder {
+      &:before {
+        font-family: "ElegantIcons";
+        content: "\55";
+        margin-right: 0.3em;
+      }
+    }
+  }
+
 }
 
 textarea {
