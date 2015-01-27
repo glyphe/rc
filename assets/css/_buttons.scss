@@ -23,8 +23,12 @@
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
+  background-color: $brand-color-contrast;
+
   &:link, &:visited {}
-  &:hover, &:active, &:focus {}
+  &:hover, &:active, &:focus {
+    background-color: darken($brand-color-contrast,10%);
+  }
 }
 
 .btn-buy {

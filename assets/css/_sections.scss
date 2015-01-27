@@ -488,7 +488,7 @@ li.thumb-active {
 }
 
 p.price { // Preis im Shop
-  color: $brand-color-prim;
+  color: $brand-color-contrast;
   font-size: 1.5em;
   margin-top: 1em;
   margin-bottom: 0;
@@ -867,6 +867,23 @@ section.sec-table {
 
 .page-haendler {
   margin: 2em 0 4em;
+}
+
+.nav-haendler-switch {
+  li {
+      display: inline-block;
+      margin-right: -0.3em; // damit die Links nebeneinander anschließen
+      padding: 0;
+  }
+  a:link, a:visited {
+    border-radius: 5px;
+    display: inline-block;
+    background-color: $gray-2;
+    margin: 0;
+    padding: 0.2em 0.7em 0.3em;
+    text-decoration: none;
+    color: $background-color;
+  }
 }
 
 .nav-haendler {
