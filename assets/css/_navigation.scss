@@ -6,8 +6,14 @@ nav ul {
   padding: 0;
 }
 
-// ## Links ##
 .nav-header {
+  @include respond-to(bp-small-only) {  // Reihenfolge der Navigation bei Handy ändern
+    @include display(flex);
+    @include flex-flow(column);
+    background-color: lighten($background-color-footer, 10%);
+    padding: 0 0 0.5em;
+  }
+
   a:link, a:visited {
     text-decoration: none;
     @include transition(all 0.3s ease-out);
@@ -50,16 +56,8 @@ nav ul {
   @include display(flex); // weil Reihenfolge von main und meta vertauscht werden
 }
 
-// ## Hauptnavigation ##
 
-header nav {
-  @include respond-to(bp-small-only) {  // Reihenfolge der Navigation bei Handy ändern
-    @include display(flex);
-    @include flex-flow(column);
-    background-color: lighten($background-color-footer, 10%);
-    padding: 0.5em 0;
-  }
-}
+// ## Hauptnavigation ##
 
 .nav-main,
 .nav-meta {
@@ -68,7 +66,7 @@ header nav {
     @include respond-to(bp-small-only) {
       display: block;
       font-size: 1.2em;
-      padding: 0.2em 0 0.3em 2.6em;  // 2.6em um auf einer Linie mit dem Logo einrücken
+      padding: 0.6em 0 0.4em 2.6em;  // 2.6em um auf einer Linie mit dem Logo einrücken
     }
   }
 
@@ -82,6 +80,7 @@ header nav {
     @include respond-to(bp-small-only) {
       background-color: rgba($background-color,0.6);
       color: $background-color-footer;
+      font-weight: 600;
     }
   }
 
@@ -105,9 +104,9 @@ header nav {
 .nav-meta {
   @include respond-to(bp-medium-only) {
     position: absolute;
-    top: 1em;
+    top: 1.5em;
     right: $inner-distance;
-    width: 55%;
+    width: 58%;
     text-align: right;
     line-height: 1.6;
   }
@@ -131,8 +130,9 @@ header nav {
   }
 
   @include respond-to(bp-medium) {
-    ul li {
+    li {
       display: inline-block;
+      margin-right: 0.5em;
     }
   }
 
@@ -164,16 +164,52 @@ header nav {
 
 // ## Sprachauswahl ##
 
+.language-select-handheld {
+  font-size: 1.2em;
+  background-color: darken($background-color-footer,5%);
+  padding: 0.8em 0 0.5em 2.6em;
+  text-transform: uppercase;
+
+  @include respond-to(bp-medium) {
+    display: none; // Ab Medium ausblenden
+  }
+  li {
+    display: inline-block;
+
+    &:after {
+      content: "|";
+      color: $background-color-footer;
+      margin: 0 0.3em;
+    }
+
+    &:last-child:after {
+      content: none;
+    }
+  }
+  a:link, a:visited {
+    text-decoration: underline;
+  }
+  a.language-current:link, a.language-current:visited {
+    text-decoration: none;
+    background: none;
+  }
+}
+
 .language-select {
   border: 2px solid $brand-color-sec;
   border-radius: 4px;
   line-height: 1;
   font-size: 0.9em;
+  overflow: hidden;
+  padding-right: 4px;
+  position: relative;
+  top: 3px;
 
   a:link, a:visited {
     line-height: 1;
-    padding: 0 4px 1px;
+    padding: 0.2em 0.4em 0;
     display: inline-block;
+    margin-right: -4px;
   }
   a:hover {
     background-color: $brand-color-prim;

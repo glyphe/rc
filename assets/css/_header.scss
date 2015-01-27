@@ -2,10 +2,10 @@
   background-color: rgb(230, 230, 230);
   padding: 1em 0 0;
   @include respond-to(bp-medium) {
-    padding: 1em $inner-distance;
+    padding: 1em $inner-distance 0.5em;
   }
   @include respond-to(bp-large) {
-    padding: 1.5em $inner-distance 2em;
+    padding: 1em $inner-distance 0.75em;
   }
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 
@@ -21,18 +21,21 @@
 .logo {
   width: 10em;
   margin-bottom: 0.8em;
+  display: inline-block;
   
   @include respond-to(bp-small-only) {
     margin-left: 0.5em;
   }
 
   @include respond-to(bp-medium) {
-    width: 12em;
+    width: 10em;
     margin-left: -0.8em;
   }
 
   @include respond-to(bp-large) {
-    width: 13em;
+    width: 12.5em;
     margin-bottom: 0;
+    position: relative;
+    top: -0.5em;
   }
 }

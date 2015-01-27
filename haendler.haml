@@ -5,107 +5,44 @@
 
 	%section
 		.inner-wrapper
-			%h1	Händler finden
 			%nav.nav-haendler-switch
 				%ul
 					%li
-						%a(href="#") <i class="fa fa-map-marker"></i> Map Karte
+						%a.active(href="<!-- @path haendler -->") <i class="fa fa-map-marker"></i> Karte
 					%li
-						%a(href="#") <i class="fa fa-align-justify"></i> Liste
+						%a(href="<!-- @path haendler-list -->") <i class="fa fa-align-justify"></i> Liste
+			%h1	Händler finden
 
 			%nav.nav-haendler
 				%ul
+					%li.country	Österreich:
+					%li 
+						%a(href="#wien") Wien
 					%li
-						Österreich
-
-						%ul
-							%li 
-								%a(href="#wien") Wien
-							%li
-								%a(href="#") Niederösterreich
-							%li
-								%a(href="#oberoesterreich") Oberösterreich
-							%li
-								%a(href="#") Kärnten
-							%li
-								%a(href="#") Vorarlberg
-							%li
-								%a(href="#") Tirol
-							%li
-								%a(href="#") Salzburg
-							%li
-								%a(href="#") Burgenland
-							%li
-								%a(href="#") Steiermark
+						%a(href="#") Niederösterreich
+					%li
+						%a(href="#oberoesterreich") Oberösterreich
+					%li
+						%a(href="#") Kärnten
+					%li
+						%a(href="#") Vorarlberg
+					%li
+						%a(href="#") Tirol
+					%li
+						%a(href="#") Salzburg
+					%li
+						%a(href="#") Burgenland
+					%li
+						%a(href="#") Steiermark
+				%ul
+					%li.country Weitere Länder:
 					%li
 						%a(href="#") Deutschland
 					%li
 						%a(href="#") Schweiz
 
-	%section.haendler-verzeichnis
-		.inner-wrapper
-			%h2#wien Wien
-
-			%div
-				%div
-					%h4 YOOM e-motion for you
-					%p
-						Franz-Josefs-Kai 37<br>
-						1010 Wien<br>
-						%a(href="http://www.yoom.at/" target="_blank") Zur Website
-				%div
-					%h4 ARGUS
-					%p
-						Frankenberggasse 11<br>
-						1040 Wien<br>
-						%a(href="http://www.argus.or.at/" target="_blank") Zur Website
-				%div
-					%h4 Citybiker
-					%p
-						Lerchenfelderstraße 13<br>
-						1070 Wien<br>
-						%a(href="http://www.bikers.co.at/" target="_blank") Zur Website
-				%div
-					%h4 Bikers
-					%p
-						Spittelauer Lände 12<br>
-						1090 Wien<br>
-						%a(href="http://citybiker.at/" target="_blank") Zur Website
-				%div
-					%h4 Elektrobiker
-					%p
-						Westbahnstraße 26<br>
-						1070 Wien<br>
-						%a(href="http://www.elektrobiker.com/" target="_blank") Zur Website
-				%div
-					%h4 Das Faltrad
-					%p
-						Ottakringer Straße 71<br>
-						1160 Wien<br>
-						%a(href="http://www.dasfaltrad.at/" target="_blank") Zur Website
-				%div
-					%h4 Bike + More
-					%p
-						Agavenweg 21<br>
-						1220 Wien<br>
-						%a(href="http://www.bikemore.at/" target="_blank") Zur Website
-
-	%section.haendler-verzeichnis
-		.inner-wrapper
-			%h2#oberoesterreich Oberösterreich
-			%div
-				%div
-					%h4 Constantin Bike
-					%p
-						Holzstraße 1<br>
-						4020 Linz<br>
-						%a(href="http://www.constantinbike.at/" target="_blank") Zur Website
-				%div
-					%h4 Constantin Bike
-					%p
-						Dörnbacherstraße 3-5<br>
-						4061 Pasching/Linz<br>
-						%a(href="http://biketronic.at/" target="_blank") Zur Website	
+	%section.haendler-map
+		%img(src="<!-- @path map -->")
 
 %section.sec-bottom-links
 	.inner-wrapper

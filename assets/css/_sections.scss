@@ -25,7 +25,7 @@ section {
 }
 
 .callout-bar {
-  padding: 1em $inner-distance*2;
+  padding: 1em $inner-distance*2 0.7em;
   text-align: center;
   background-color: $brand-color-prim;
   color: $background-color;
@@ -36,7 +36,7 @@ section {
 
 .callout-bar-close {
   position: absolute;
-  top: 0.7em;
+  top: 0.5em;
   right: 0.5em;
   font-size: 1.4em;
 
@@ -64,7 +64,7 @@ section.sec-keyvisual {
 
 section.sec-feature-list {
   background: $section-background;
-  padding: 1em $inner-distance 2em;
+  padding: 0.5em $inner-distance 2em;
   text-align: center;
 
   .inner-wrapper {
@@ -72,22 +72,24 @@ section.sec-feature-list {
   }
 
   h2 {
-    font-size: 1.5em;
-    @include respond-to(bp-medium) {
-      font-size: 1.7em;
-    }
-    @include respond-to(bp-large) {
-      font-size: 2em;
-    }
     max-width: $max-width-text/1.7;
     margin: 0 auto 1em;
+    font-size: 1.4em;
+    @include respond-to(bp-medium) {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    @include respond-to(bp-large) {
+      font-size: 1.7em;
+    }
+
   }
 
   h3 {
     text-transform: uppercase;
     font-style: italic;
     color: $brand-color-prim;
-    margin: 1em 0 0.3em 0;
+    margin: 0.5em 0 0.3em 0;
   }
   p {
     font-size: 0.9em;
@@ -97,12 +99,12 @@ section.sec-feature-list {
   }
 
   .icon-drop {
-    width: 80px;
+    width: 60px;
     @include respond-to(bp-medium) {
-      width: 100px;
+      width: 80px;
     }
     @include respond-to(bp-xlarge) {
-      width: 120px;
+      width: 100px;
     }
   }
 
@@ -114,10 +116,9 @@ section.sec-feature-list {
   @include justify-content(center);
 
   > div {
-    width: 50%;
-    padding: 1em 1em 0 1em;
+    width: 33%;
     @include respond-to(bp-medium) {
-      width: 33%;
+      padding: 0 0.5em;
     }
     @include respond-to(bp-xlarge) {
       width: 20%;
@@ -139,15 +140,27 @@ section.sec-shop-overview {
     @include respond-to(bp-medium) {
       max-width: 250px;
     }
+    @include respond-to(bp-large) {
+      max-width: 220px;
+    }
   }
 
   .icon-eu-made {
     position: absolute;
     top: 2em;
     right: 2em;
-    width: 18%;
-    min-width: 80px;
-    max-width: 150px;
+    width: 100px;
+
+    @include respond-to(bp-medium-only) {
+      right: 20%;
+      width: 110px;
+    }
+    @include respond-to(bp-large) {
+      right: 18%;
+    }
+    @include respond-to(bp-xlarge) {
+      right: 22%;
+    }
   }
 
   a:link, a:visited {
@@ -155,9 +168,9 @@ section.sec-shop-overview {
   }
 
   h2 {
-    font-size: 1.8em;
-    margin-bottom: 0;
-    padding-top: 0.5em;
+    font-size: 1.6em;
+    margin-bottom: -0.2em;
+    margin-top: 0;
   }
 
   ul {
@@ -323,7 +336,7 @@ section.sec-bottom-links {
 
 .headline-icon {
   display: block;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
 
   @include respond-to(bp-small-only) {
     margin: 0 auto; // Icon überall zentrieren bei kleinstem Breakpoint
@@ -423,7 +436,7 @@ li.thumb-active {
       width: 70%;
     }
     @include respond-to(bp-large) {
-      max-width: 350px;
+      // max-width: 300px;
     }
   }
 }
@@ -434,7 +447,7 @@ li.thumb-active {
 
   @include respond-to(bp-large) {
     @include span-columns(6);
-    padding: 1em;
+    padding: 1.5em;
     background-color: rgba(255,255,255,0.9);
     border-radius: 10px;
   }
@@ -458,12 +471,12 @@ li.thumb-active {
   }
 
   @include respond-to(bp-large) {
-    font-size: 0.9em; // kleinere Schrift bei Zweispaltiger Darstellung des 
+    font-size: 0.8em; // kleinere Schrift bei Zweispaltiger Darstellung des 
   }
 
   h1 {
     line-height: 1;
-    font-size: 2em;
+    font-size: 1.6em;
   }
 
   h2 {  // Zwischenüberschriften bei den Details
@@ -510,9 +523,10 @@ p.price-details {
 }
 
 .link-size {
+  text-transform: none;
+  font-weight: 400;
   font-size: 0.9em;
-  display: block;
-  margin-top: 0.4em;
+  margin-left: 0.4em;
 }
 
 .sticky-shopping-cart {
@@ -570,7 +584,10 @@ section.sec-verwandlung {
     margin: 0 auto;
     width: 640px; // damit Bilder nebeinander sind und es nicht umbricht
     @include respond-to(bp-medium) {
-      width: 1040px;
+      width: 750px;
+    }
+    @include respond-to(bp-large) {
+      width: 100%;
     }
   }
 
@@ -582,11 +599,14 @@ section.sec-verwandlung {
       content: $fa-var-chevron-circle-right;
       font-size: 1.5em;
       position: relative;
-      bottom: 150px;
+      bottom: 120px;
       left: -0.75em;
       color: $gray-1;
       @include respond-to(bp-medium) {
-        bottom: 250px;
+        bottom: 180px;
+      }
+      @include respond-to(bp-large) {
+        bottom: 220px;
       }
     }
     &:last-child:after {
@@ -595,9 +615,15 @@ section.sec-verwandlung {
   }
 
   img {
-    width: 130px;
+    width: 110px;
     @include respond-to(bp-medium) {
-      width: 220px;
+      width: 150px;
+    }
+    @include respond-to(bp-large) {
+      width: 180px;
+    }
+    @include respond-to(bp-xlarge) {
+      width: 200px;
     }
   }
 
@@ -605,6 +631,7 @@ section.sec-verwandlung {
 
 section.sec-belueftung {
   .inner-wrapper {
+    max-width: $max-width-inner-container !important;
     @include respond-to(bp-medium) {
       @include outer-container;
       @include display(flex);  // zum vertikalen zentrieren
@@ -629,6 +656,12 @@ section.sec-belueftung {
       @include span-columns(4);
     }
   }
+
+  p {
+    @include respond-to(bp-large) {
+      max-width: 25em;
+    }
+  }
 }
 
 section.sec-kapuze {
@@ -636,6 +669,7 @@ section.sec-kapuze {
 
   .inner-wrapper {
     @include respond-to(bp-medium) {
+      max-width: $max-width-inner-container !important;
       @include outer-container;
       @include row($direction: RTL);  // Änderung der Reihenfolge der Container von Rechts nach links
       @include display(flex);  // zum vertikalen zentrieren
@@ -663,6 +697,12 @@ section.sec-kapuze {
   }
   @include reset-layout-direction; // Rest der Reihenfolge für die nachfolgenden Sektionen
 
+  p {
+    @include respond-to(bp-large) {
+      max-width: 25em;
+    }
+  }
+
 }
 
 section.sec-small-feature-container {
@@ -679,7 +719,7 @@ section.sec-small-feature-container {
       @include span-columns(6);
     }
   }
-  @include reset-display; // damit nachfolgende Spalten keine Tabellen sind
+  @include reset-display; // damit nachfolgende Spalten keine Tabellelen sind
 }
 
 .sec-small-feature {
@@ -704,6 +744,9 @@ section.sec-verpackung {
     @include respond-to(bp-large) {
       margin-bottom: 2.5em;
       max-width: 500px;
+    }
+    @include respond-to(bp-xlarge) {
+      margin-bottom: 1.5em;
     }
   }
 
@@ -870,18 +913,38 @@ section.sec-table {
 }
 
 .nav-haendler-switch {
-  li {
-      display: inline-block;
-      margin-right: -0.3em; // damit die Links nebeneinander anschließen
-      padding: 0;
+  @include respond-to(bp-small-only) {
+    display: none;
   }
-  a:link, a:visited {
-    border-radius: 5px;
+
+  border: 2px solid $gray-2;
+  border-radius: 6px;
+  display: inline-block;
+  padding-right: 0.3em;
+  overflow: hidden;
+  margin-bottom: 1em;
+  float: right;
+
+  li {
     display: inline-block;
-    background-color: $gray-2;
+    margin-right: -0.3em; // damit die Links nebeneinander anschließen
+    padding: 0;
+  }
+
+  a:link, a:visited {
+    display: inline-block;
     margin: 0;
-    padding: 0.2em 0.7em 0.3em;
+    padding: 0.4em 0.7em 0.2em;
     text-decoration: none;
+    background-color: $background-color;
+    color: $gray-2;
+  }
+  a:hover, a:hover.active {
+    background-color: $gray-1;
+    color: $gray-2;
+  }
+  a:link.active, a:visited.active {
+    background-color: $gray-2;
     color: $background-color;
   }
 }
@@ -889,6 +952,10 @@ section.sec-table {
 .nav-haendler {
   @include respond-to(bp-small-only) {
     display: none; // Bei kleiner Auflösung ausblenden
+  }
+
+  ul {
+    margin-bottom: 0.5em;
   }
 
   li {
@@ -903,7 +970,23 @@ section.sec-table {
       content: none;
     }
   }
+  .country {
+    font-weight: 600;
+    &:after {
+      content: none;
+    }
+  }
 }
+
+section.haendler-map {
+  padding: 0;
+  margin: 2em 0 -4em;
+  border-top: 1px solid $gray-2;
+  img {
+    width: 100%;
+  }
+}
+
 
 section.haendler-verzeichnis {
 
@@ -946,7 +1029,8 @@ section.haendler-verzeichnis {
   }
   h4 {
     @include respond-to(bp-medium) {
-      margin-top: 1em;  
+      margin: 1em 0 0;
+
     }
   }
 
