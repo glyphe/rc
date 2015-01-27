@@ -1,7 +1,7 @@
 .btn {
   display: inline-block;
   margin: 0.2em 0.5em 0.2em 0;
-  padding: 0.3em 0.8em 0.5em;
+  padding: 0.5em 0.8em 0.3em;
   background-color: $brand-color-prim;
   border-radius: 4px;
   font-weight: 400;
@@ -31,7 +31,7 @@
   @extend .btn-action;
   font-size: 1em;
   text-align: center;
-  padding-bottom: 0.4em;
+  // padding-bottom: 0.4em;
   
   @include respond-to(bp-small-only) {
     margin-top: 0.5em;

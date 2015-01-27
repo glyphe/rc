@@ -1,3 +1,104 @@
+// Schrift importieren
+@import url("//hello.myfonts.net/count/2d2be1");
+
+@font-face {
+  // Panton Regular
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_B_0.eot');
+  src: url('webfonts/2D2BE1_B_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_B_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_B_0.woff') format('woff'),
+    url('webfonts/2D2BE1_B_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  // Panton Regular Italic
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_D_0.eot');
+  src: url('webfonts/2D2BE1_D_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_D_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_D_0.woff') format('woff'),
+    url('webfonts/2D2BE1_D_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  // Panton Semi-Bold
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_E_0.eot');
+  src: url('webfonts/2D2BE1_E_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_E_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_E_0.woff') format('woff'),
+    url('webfonts/2D2BE1_E_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  // Panton Semi-Bold Italic
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_F_0.eot');
+  src: url('webfonts/2D2BE1_F_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_F_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_F_0.woff') format('woff'),
+    url('webfonts/2D2BE1_F_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  // Panton Bold
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_5_0.eot');
+  src: url('webfonts/2D2BE1_5_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_5_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_5_0.woff') format('woff'),
+    url('webfonts/2D2BE1_5_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  // Panton Bold Italic
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_2_0.eot');
+  src: url('webfonts/2D2BE1_2_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_2_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_2_0.woff') format('woff'),
+    url('webfonts/2D2BE1_2_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  // Panton Extra Bold
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_1_0.eot');
+  src: url('webfonts/2D2BE1_1_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_1_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_1_0.woff') format('woff'),
+    url('webfonts/2D2BE1_1_0.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  // Panton Extra Bold Italic
+  font-family: 'Panton';
+  src: url('webfonts/2D2BE1_3_0.eot');
+  src: url('webfonts/2D2BE1_3_0.eot?#iefix') format('embedded-opentype'),
+    url('webfonts/2D2BE1_3_0.woff2') format('woff2'),
+    url('webfonts/2D2BE1_3_0.woff') format('woff'),
+    url('webfonts/2D2BE1_3_0.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
 // Generelle Typo-Settings
 
 body {
@@ -46,6 +147,10 @@ h3, h4, h5, h6 {
   font-size: 1em;
 }
 
+
+p {
+  line-height: 1.4;
+}
 
 .page-content,
 .entry-content {
