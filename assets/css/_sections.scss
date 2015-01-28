@@ -127,19 +127,30 @@ section.sec-feature-list {
 }
 
 section.sec-shop-overview {
-  @extend section.sec-small-feature-container; // Zweispaltigkeit
+  padding: 0;
+  // Zweispaltiges Layout
+  .inner-wrapper {
+    @include respond-to(bp-medium) {
+      @include outer-container;
+      @include row(table);
+    }
+  }
+  section {
+    @include respond-to(bp-medium) {
+      @include span-columns(6);
+    }
+  }
+  @include reset-display; // damit nachfolgende Spalten keine Tabellelen sind
+
   background: $section-background;
   text-align: center;
-  @include respond-to(bp-large) {
+  @include respond-to(bp-medium) {
     border-top: 0.5em solid $background-color;
   }
 
   .img-shop {  // Shop-Bilder
     margin: 0 auto;
     max-width: 180px;
-    @include respond-to(bp-medium) {
-      max-width: 250px;
-    }
     @include respond-to(bp-large) {
       max-width: 220px;
     }
@@ -149,13 +160,10 @@ section.sec-shop-overview {
     position: absolute;
     top: 2em;
     right: 2em;
-    width: 100px;
+    width: 80px;
 
-    @include respond-to(bp-medium-only) {
-      right: 20%;
-      width: 110px;
-    }
     @include respond-to(bp-large) {
+      width: 100px;
       right: 18%;
     }
     @include respond-to(bp-xlarge) {
@@ -165,6 +173,12 @@ section.sec-shop-overview {
 
   a:link, a:visited {
     text-decoration: none;
+  }
+
+  .btn {
+    @include respond-to(bp-small-only) {
+      width: 80%;
+    }
   }
 
   h2 {
@@ -183,16 +197,16 @@ section.sec-shop-overview {
     border-top: 0.5em solid $background-color;
     position: relative;  // Als Referenz für Eu-Made-Icons
 
-    @include respond-to(bp-large) {
+    @include respond-to(bp-medium) {
       border-top: none;
     }
     &:first-child{
-      @include respond-to(bp-large) {
+      @include respond-to(bp-medium) {
         border-right: 0.25em solid $background-color;
       }
     }
     &:last-child{
-      @include respond-to(bp-large) {
+      @include respond-to(bp-medium) {
         border-left: 0.25em solid $background-color;
       }
     }
@@ -308,12 +322,15 @@ section.sec-bottom-links {
 // ## ABOUT / CONTENT ##
 // #####################
 
-.page-content section {
+.page-content {
+  padding: 2em 0 3em;
+}
+.content-container {
   max-width: $max-width-text;
-  padding: 1.5em $inner-distance 3em;
-  @include respond-to(bp-medium) {
-    padding: 2.5em $inner-distance;
-  }
+}
+
+.page-content section {
+  padding: 0 $inner-distance;
 }
 
 
@@ -359,9 +376,9 @@ section.sec-bottom-links {
   text-align: inherit;
 
   @include respond-to(bp-large) {
-    padding: 1em $inner-distance;
+    padding: 2em $inner-distance;
     background: url(../img/shop-bg-big.jpg);
-    background-position: center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
   }
@@ -375,6 +392,7 @@ section.sec-bottom-links {
 }
 
 .shop-gallery {
+  position: relative; // als Referenz für das EU-Made-Icon
   padding: 1em $inner-distance;
   @include respond-to(bp-large) {
     padding: 0;
@@ -393,6 +411,23 @@ section.sec-bottom-links {
     @include span-columns(7);
   }
 
+  .icon-eu-made {
+    width: 100px;
+    position: absolute;
+    top: 1em;
+    right: $inner-distance;
+    @include respond-to(bp-small-only) {
+      width: 80px;
+    }
+    @include respond-to(bp-large) {
+      top: 0;
+      right: 0;
+    }
+    @include respond-to(bp-xlarge) {
+      right: 3em;
+    }
+  }
+
 }
 
 .shop-gallery-thumbs {
@@ -404,14 +439,20 @@ section.sec-bottom-links {
     list-style: none;
   }
   li {
-    background-color: rgba(255,255,255,0.7);
-    @include size(75px); // width: 75; height: 75;
-    @include respond-to(bp-medium) {
-      @include size(90px);
-    }
     border-radius: 5px;
     padding: 5px;
     margin: 0 0 0.7em;
+    background-color: rgba(255,255,255,0.7);
+    @include transition(all 0.2s);
+    @include size(65px); // width: 65; height: 65;
+    @include respond-to(bp-medium) {
+      @include size(70px);
+    }
+    
+    &:hover {
+      box-shadow: 0 0 0 3px rgba($brand-color-prim,0.9);
+      background-color: rgba(255,255,255,0.9);
+    }
   }
   img {
     height: 100%;
@@ -423,6 +464,8 @@ section.sec-bottom-links {
 
 li.thumb-active {
   background-color: rgba(255,255,255,0.95);
+  // border: 3px solid rgba($background-color,0.4);
+  box-shadow: 0 0 0 3px rgba($background-color,0.4);
 }
 
 .shop-gallery-img-big {
@@ -459,7 +502,6 @@ li.thumb-active {
   > div {
     @include respond-to(bp-large) { // Preis und Größe zweispaltig darstellen
       @include row(); // cleart nach dem Block
-      margin-bottom: 1em;
 
       > div:first-child { // Preis
         @include span-columns(2 of 6);
@@ -471,7 +513,7 @@ li.thumb-active {
   }
 
   @include respond-to(bp-large) {
-    font-size: 0.8em; // kleinere Schrift bei Zweispaltiger Darstellung des 
+    font-size: 0.9em; // kleinere Schrift bei Zweispaltiger Darstellung des 
   }
 
   h1 {
@@ -480,8 +522,8 @@ li.thumb-active {
   }
 
   h2 {  // Zwischenüberschriften bei den Details
-    margin-top: 1.2em;
-    margin-bottom: 0.8em;
+    margin-top: 1.7em;
+    margin-bottom: 0.4em;
     text-transform: uppercase;
     font-style: normal;
     color: $text-color-prim;
@@ -502,6 +544,7 @@ li.thumb-active {
 
 p.price { // Preis im Shop
   color: $brand-color-contrast;
+  font-weight: 600;
   font-size: 1.5em;
   margin-top: 1em;
   margin-bottom: 0;
@@ -529,8 +572,37 @@ p.price-details {
   margin-left: 0.4em;
 }
 
+
+.btn-cart {
+  @extend .btn-buy;
+  text-transform: none;
+  letter-spacing: 0;
+  background-color: $brand-color-contrast;
+
+  @include respond-to(bp-small-only) {  // Styling Cart-Button auf Handhelds
+    border-radius: 0;
+    padding: 0.7em $inner-distance;
+    border-top: 1px solid lighten($brand-color-contrast,20%);
+  }
+
+  &:after { // Pfeil-Icon
+    font-family: "ElegantIcons";
+    line-height: 0.9;
+    content: "\24";
+    font-size: 1.3em;
+    margin-left: 0.5em;
+    position: relative;
+    top: 4px;
+  }
+
+  &:hover {
+    background-color: darken($brand-color-contrast,10%);
+  }
+
+}
+
 .sticky-shopping-cart {
-  padding: 0.5em $inner-distance;
+  padding: 1em $inner-distance;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -543,11 +615,11 @@ p.price-details {
   }
 
   @include respond-to(bp-medium) {
-    padding-bottom: 1.5em;
+    bottom: 1em;
   }
   
   .btn-buy {
-    box-shadow: 1px 0 3px rgba(0,0,0,0.3);
+    box-shadow: 1px 0 4px rgba(0,0,0,0.5);
     margin: 0;
   }
 }
@@ -570,7 +642,7 @@ section.sec-verwandlung {
   }
 
   .headline-icon {
-    margin: 0 auto;
+    margin: 0 auto 0.5em;
   }
 }
 

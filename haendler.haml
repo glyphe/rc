@@ -8,38 +8,10 @@
 			%nav.nav-haendler-switch
 				%ul
 					%li
-						%a.active(href="<!-- @path haendler -->") <i class="fa fa-map-marker"></i> Karte
+						%a.active(href="<!-- @path haendler -->") <span aria-hidden="true" class="icon_map_alt"></span> Karte
 					%li
-						%a(href="<!-- @path haendler-list -->") <i class="fa fa-align-justify"></i> Liste
+						%a(href="<!-- @path haendler-list -->") <span aria-hidden="true" class="icon_menu-square_alt2"></span> Liste
 			%h1	Händler finden
-
-			%nav.nav-haendler
-				%ul
-					%li.country	Österreich:
-					%li 
-						%a(href="#wien") Wien
-					%li
-						%a(href="#") Niederösterreich
-					%li
-						%a(href="#oberoesterreich") Oberösterreich
-					%li
-						%a(href="#") Kärnten
-					%li
-						%a(href="#") Vorarlberg
-					%li
-						%a(href="#") Tirol
-					%li
-						%a(href="#") Salzburg
-					%li
-						%a(href="#") Burgenland
-					%li
-						%a(href="#") Steiermark
-				%ul
-					%li.country Weitere Länder:
-					%li
-						%a(href="#") Deutschland
-					%li
-						%a(href="#") Schweiz
 
 	%section.haendler-map
 		%img(src="<!-- @path map -->")

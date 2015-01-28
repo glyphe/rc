@@ -7,7 +7,7 @@ input {
   width: 100%;
   border: 2px solid $text-color-prim;
   color: $text-color-prim;
-  padding: 0.4em 0.5em 0.3em;
+  padding: 0.5em 0.5em 0.3em;
   margin: 0.5em 0;
   border-radius: 5px;
   background-color: $background-color;
@@ -62,7 +62,6 @@ input {
         font-family: "ElegantIcons";
         content: "\55";
         margin-right: 0.3em;
-        font-size: 0.9em;
       }
     }
   }

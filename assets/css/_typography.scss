@@ -107,16 +107,12 @@ body {
   font-weight: 400;
   color: $text-color-prim;
 
-  @include respond-to(bp-medium) {
+  @include respond-to(bp-large) {
     font-size: 1.1em;
   }
 
-  @include respond-to(bp-large) {
-    font-size: 1.2em;
-  }
-
   @include respond-to(bp-xlarge) {
-    font-size: 1.3em;
+    font-size: 1.15em;
   }
 }
 
@@ -171,8 +167,11 @@ blockquote {
   font-weight: 600;
   font-size: 1.2em;
   line-height: 1.3;
+  @include respond-to(bp-large) {
+    line-height: 1.4;
+  }
   margin: 0.5em 0 1em 0;
-  color: $background-color-footer;
+  color: $brand-color-tir;
 }
 
 figcaption {
@@ -183,13 +182,21 @@ figcaption {
 // ## Listen ##
 
 .ul-features {
-  list-style-image: url('../img/icon-bullet-drop.svg');
+  list-style: none;
   padding-left: 1em;
   text-align: left;
   line-height: 1.2;
 
   li {
     margin-bottom: 0.5em;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 0.7em;
+      width: 1em;
+      margin-left: -1em;
+      background: url('../img/icon-bullet-drop.svg') no-repeat;
+    }
   }
 }
 
@@ -208,6 +215,11 @@ figcaption {
       font-family: "ElegantIcons";
       content: "\4e";
       padding-right: 0.3em;
+      background: none;
+      width: 0;
+      height: 0;
+      display: inline;
+      margin: 0;
     }
   }
 }

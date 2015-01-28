@@ -2,6 +2,7 @@
 
 $brand-color-prim: rgb(16, 119, 189);
 $brand-color-sec: rgb(26, 26, 24);
+$brand-color-tir: #018E8E;
 $brand-color-contrast: #C82725;
 $text-color-prim: rgb(8, 60, 95);
 $text-color-sec: black;
@@ -15,7 +16,7 @@ $section-background: url(soft_wallpaper.jpg) #dedede;
 
 // GRÖSSEN
 
-$max-width: 1340px; // wird auch vom neat Grid verwendet
+$max-width: 1200px; // wird auch vom neat Grid verwendet
 $max-width-inner-container: 1000px;  // Für einzelne Module im Shop
 $max-width-text: 45em;
 $max-width-images: 80%;

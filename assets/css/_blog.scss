@@ -4,8 +4,13 @@
 }
 
 .site-content {
-    padding: 0 $inner-distance;
-    margin: 1.5em 0 4em;
+	@include respond-to(bp-large) {
+		padding: 0 $inner-distance;
+	}
+    margin: 1.5em 0 0;
+    @include respond-to(bp-large) {
+    	margin-bottom: 3em;
+    }
 }
 
 .site-content .inner-wrapper {
@@ -14,10 +19,13 @@
 }
 
 .content-area {
+	padding: 0 $inner-distance;
+
 	@include respond-to(bp-large) {
-		max-width: 40em;
+		padding: 0;
 	}
-	@include respond-to(bp-xlarge) {
+
+	@include respond-to(bp-large) {
 		@include span-columns(8);
 	}
 }
@@ -30,26 +38,24 @@
 
 .widget-area {
 	@include outer-container;
-
-	border-top: 2px solid $gray-1;
-	padding-top: 2em;
+	background: $section-background;
+	padding: 2em $inner-distance 4em;
 	margin-top: 5em;
 
-	@include respond-to(bp-xlarge) {
-		padding-top: 0;
+	@include respond-to(bp-large) {
+		padding: 0;
 		margin-top: 0;
 		border-top: 0;
 		border-left: 2px solid $gray-1;
-		padding-left: 2em
+		padding-left: 2em;
+		font-size: 0.8em;
 	}
 
 	
 	@include respond-to(bp-large) {
-
-	}
-	@include respond-to(bp-xlarge) {
-		@include span-columns(3);
+		background: none;
 		@include shift(1);
+		@include span-columns(3);
 	}
 
 	> aside {  // Mehrspaltige Widget-Area
@@ -57,7 +63,7 @@
 			@include span-columns(6);
   			@include omega(2n);
   		}
-		@include respond-to(bp-xlarge) {
+		@include respond-to(bp-large) {
 			@include span-columns(12);
   		}
 
@@ -66,7 +72,7 @@
   			@include respond-to(bp-medium) {
   				padding-right: 2em;
   			}
-  			@include respond-to(bp-xlarge) {
+  			@include respond-to(bp-large) {
   				padding-right: 0;
   			}
   		}
@@ -74,7 +80,7 @@
   			@include respond-to(bp-medium) {
   				padding-left: 2em;
   			}
-  			@include respond-to(bp-xlarge) {
+  			@include respond-to(bp-large) {
   				padding-left: 0;
   			}
   		}
@@ -105,7 +111,7 @@
 
 .widget_search {
 	margin-top: 2em;
-	@include respond-to(bp-xlarge) {
+	@include respond-to(bp-large) {
 		margin-top: 0;
 	}
 }
@@ -141,6 +147,7 @@
 }
 .entry-meta {
 	color: $gray-2;
+	font-size: 0.9em;
 }
 
 

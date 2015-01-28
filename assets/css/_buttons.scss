@@ -1,7 +1,10 @@
 .btn {
   display: inline-block;
   margin: 0.2em 0.5em 0.2em 0;
-  padding: 0.5em 0.8em 0.3em;
+  padding: 0.4em 0.8em 0.2em;
+  @include respond-to(bp-small-only) {
+    padding: 0.6em 0.8em 0.4em;
+  }
   background-color: $brand-color-prim;
   border-radius: 4px;
   font-weight: 400;
@@ -35,10 +38,9 @@
   @extend .btn-action;
   font-size: 1em;
   text-align: center;
-  // padding-bottom: 0.4em;
   
   @include respond-to(bp-small-only) {
-    margin-top: 0.5em;
+    margin-top: 0.4em;
     width: 100%;
     font-size: 1.2em;
   }
@@ -48,35 +50,11 @@
     content: "\e015";
     margin-right: 8px;
     margin-left: -4px;
-  }
-}
-
-.btn-cart {
-  @extend .btn-buy;
-  text-transform: none;
-  letter-spacing: 0;
-  background-color: $brand-color-sec;
-
-  @include respond-to(bp-small-only) {  // Styling Cart-Button auf Handhelds
-    border-radius: 0;
-    padding: 0.5em $inner-distance 0.7em;
-    // font-size: 1em;
-    // text-align: left;
-    border-top: 1px solid lighten($brand-color-sec,20%);
+    display: inline-block;
+    @include transition(transform 0.5s ease-out);
   }
 
-  &:after { // Pfeil-Icon
-    font-family: "ElegantIcons";
-    line-height: 0.9;
-    content: "\24";
-    font-size: 1.3em;
-    margin-left: 0.5em;
-    position: relative;
-    top: 4px;
+  &:hover:before {
+    @include transform(translateX(0.3em));
   }
-
-  &:hover {
-    background-color: lighten($brand-color-sec,10%);
-  }
-
 }
