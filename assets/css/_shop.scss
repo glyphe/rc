@@ -1,0 +1,21 @@
+.page-shop {
+	padding: 2em $inner-distance 4em;
+}
+
+.shop_table {
+	thead {
+		border-bottom: 1px solid $text-color-prim;
+	}
+}
+
+
+.test-table td {
+	display: block;
+	color: red;
+}
+
+.product-thumbnail {
+	img {
+		width: 50px;
+	}
+}
