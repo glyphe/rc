@@ -6,12 +6,19 @@
 	thead {
 		border-bottom: 1px solid $text-color-prim;
 	}
-}
 
-
-.test-table td {
-	display: block;
-	color: red;
+	@include respond-to(bp-small-only) {
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block; 
+		}
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+	}
 }
 
 .product-thumbnail {
