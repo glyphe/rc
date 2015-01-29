@@ -30,6 +30,9 @@ $shop-table-border: solid 2px $gray-1;
 
 .page-shop {
 	padding: 2em $inner-distance 4em;
+	@include respond-to(bp-large) {
+		padding-bottom: 5em;
+	}
 }
 
 .shop-title-container {
@@ -328,16 +331,38 @@ $shop-table-border: solid 2px $gray-1;
 
 
 input[type^="submit"].checkout-button {
+	margin: 2em 0 0;
+	padding: 0.8em 1.5em 0.5em;
 	@include respond-to(bp-medium) {
 		float: right;
 	}
-  &:after { // Pfeil-Icon
-    font-family: "ElegantIcons";
-    content: "\24";
-    line-height: 0.9;
-    font-size: 1.3em;
-    margin-left: 0.5em;
-    position: relative;
-    top: 4px;
-  }
+}
+
+// ###############
+// ## CHECK OUT ##
+// ###############
+
+
+.checkout {
+
+	h2 {
+		border-bottom: 2px solid $brand-color-prim;
+	}
+
+	label {
+		display: block;
+		margin-top: 0.7em;
+	}
+
+	input {
+		border-color: $gray-3;
+		&:focus {
+			border-color: $text-color-prim;
+		}
+	}
+
+}
+
+.form-row {
+	margin: 0;
 }

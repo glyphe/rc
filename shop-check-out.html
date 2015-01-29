@@ -1,23 +1,20 @@
-<!-- $title Über uns | Raincombi -->
 <!-- @include header -->
+<!-- $title Kassa | Raincombi -->
+
+<div class="page-shop">
+    <div class="inner-wrapper">
+        <div class="shop-title-container">
+            <div>
+                <h1>Kassa <span aria-hidden="true" class="icon_wallet"></span></h1>
+            </div>
+            <div class="shop-steps">
+                Schritt 2 von 3
+            </div>
+        </div>
 
 <div class="woocommerce">
-    <div class="woocommerce-info">Haben Sie einen Gutschein? <a href="#" class="showcoupon">Klicken Sie hier, um Ihren Gutscheincode einzugeben</a>
-    </div>
 
-    <form class="checkout_coupon" method="post" style="display: none;">
-
-        <p class="form-row form-row-first">
-            <input type="text" name="coupon_code" class="input-text" placeholder="Gutscheincode" id="coupon_code" value="">
-        </p>
-
-        <p class="form-row form-row-last">
-            <input type="submit" class="button" name="apply_coupon" value="Gutschein einlösen">
-        </p>
-
-        <div class="clear"></div>
-    </form>
-    <form name="checkout" method="post" class="checkout" action="http://projects2.fabianpimminger.com/?page_id=6" enctype="multipart/form-data">
+    <form name="checkout" method="GET" class="checkout" action="<!-- @path shop-check-out-done -->" enctype="multipart/form-data">
 
         <div class="col2-set" id="customer_details">
 
@@ -25,16 +22,16 @@
 
                 <div class="woocommerce-billing-fields">
 
-                    <h3>Rechnungsdetails</h3>
+                    <h2>1. Rechnungsanschrift</h2>
 
                     <p class="form-row form-row-wide address-field update_totals_on_change validate-required woocommerce-validated" id="billing_country_field">
                         <label for="billing_country" class="">Land <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <select name="billing_country" id="billing_country" class="country_to_state country_select" style="display: none;">
+                        <select name="billing_country" id="billing_country" class="country_to_state country_select">
                             <option value="">Wählen Sie ein Land aus…</option>
                             <option value="AT" selected="selected">Österreich</option>
                         </select>
-                        <div class="chosen-container chosen-container-single" style="width: 659px;" title="" id="billing_country_chosen"><a class="chosen-single" tabindex="-1"><span>Österreich</span><div><b></b></div></a>
+                        <!-- <div class="chosen-container chosen-container-single" style="width: 659px;" title="" id="billing_country_chosen"><a class="chosen-single" tabindex="-1"><span>Österreich</span><div><b></b></div></a>
                             <div class="chosen-drop">
                                 <div class="chosen-search">
                                     <input type="text" autocomplete="off">
@@ -42,19 +39,19 @@
                                 <ul class="chosen-results"></ul>
                             </div>
                         </div>
-                        <noscript>&lt;input type="submit" name="woocommerce_checkout_update_totals" value="Land aktualisieren" /&gt;</noscript>
+                        <noscript>&lt;input type="submit" name="woocommerce_checkout_update_totals" value="Land aktualisieren" /&gt;</noscript> -->
                     </p>
 
                     <p class="form-row form-row-first validate-required" id="billing_first_name_field">
                         <label for="billing_first_name" class="">Vorname <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder="" value="Fabian">
+                        <input type="text" class="input-text " name="billing_first_name" id="billing_first_name" placeholder="" value="">
                     </p>
 
                     <p class="form-row form-row-last validate-required" id="billing_last_name_field">
                         <label for="billing_last_name" class="">Nachname <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="Pimminger">
+                        <input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="">
                     </p>
                     <div class="clear"></div>
 
@@ -66,7 +63,7 @@
                     <p class="form-row form-row-wide address-field validate-required" id="billing_address_1_field">
                         <label for="billing_address_1" class="">Adresse <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_address_1" id="billing_address_1" placeholder="Anschrift" value="Landstraßer Hauptstraße 32">
+                        <input type="text" class="input-text " name="billing_address_1" id="billing_address_1" placeholder="Anschrift" value="">
                     </p>
 
                     <p class="form-row form-row-wide address-field" id="billing_address_2_field">
@@ -78,12 +75,12 @@
                     <p class="form-row form-row-wide address-field validate-required validate-postcode" id="billing_postcode_field" data-o_class="form-row form-row-wide address-field validate-required validate-postcode">
                         <label for="billing_postcode" class="">Postleitzahl (PLZ) <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_postcode" id="billing_postcode" placeholder="Postleitzahl (PLZ)" value="1030">
+                        <input type="text" class="input-text " name="billing_postcode" id="billing_postcode" placeholder="Postleitzahl (PLZ)" value="">
                     </p>
                     <p class="form-row form-row-wide address-field validate-required" id="billing_city_field" data-o_class="form-row form-row-wide address-field validate-required">
                         <label for="billing_city" class="">Ort <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_city" id="billing_city" placeholder="Ort" value="Wien">
+                        <input type="text" class="input-text " name="billing_city" id="billing_city" placeholder="Ort" value="">
                     </p>
 
                     <p class="form-row address-field validate-state form-row-wide" id="billing_state_field" style="display: none;" data-o_class="form-row form-row-first address-field validate-state">
@@ -94,13 +91,13 @@
                     <p class="form-row form-row-first validate-required validate-email" id="billing_email_field">
                         <label for="billing_email" class="">E-Mail-Adresse <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_email" id="billing_email" placeholder="" value="fabs.pim@gmail.com">
+                        <input type="text" class="input-text " name="billing_email" id="billing_email" placeholder="" value="">
                     </p>
 
                     <p class="form-row form-row-last validate-required validate-phone" id="billing_phone_field">
                         <label for="billing_phone" class="">Telefon <abbr class="required" title="erforderlich">*</abbr>
                         </label>
-                        <input type="text" class="input-text " name="billing_phone" id="billing_phone" placeholder="" value="06766403854">
+                        <input type="text" class="input-text " name="billing_phone" id="billing_phone" placeholder="" value="">
                     </p>
                     <div class="clear"></div>
 
@@ -112,10 +109,10 @@
 
                 <div class="woocommerce-shipping-fields">
 
-
+                    <h2>2. Lieferung</h2>
                     <h3 id="ship-to-different-address">
-      <label for="ship-to-different-address-checkbox" class="checkbox">An eine andere Anschrift liefern lassen?</label>
       <input id="ship-to-different-address-checkbox" class="input-checkbox" checked="checked" type="checkbox" name="ship_to_different_address" value="1">
+      <label for="ship-to-different-address-checkbox" class="checkbox">An eine andere Anschrift liefern lassen?</label>
     </h3>
 
                     <div class="shipping_address" style="display: block;">
@@ -125,11 +122,12 @@
                         <p class="form-row form-row-wide address-field update_totals_on_change validate-required woocommerce-validated" id="shipping_country_field">
                             <label for="shipping_country" class="">Land <abbr class="required" title="erforderlich">*</abbr>
                             </label>
-                            <select name="shipping_country" id="shipping_country" class="country_to_state country_select" style="display: none;">
+                            <select name="shipping_country" id="shipping_country" class="country_to_state country_select">
                                 <option value="">Wählen Sie ein Land aus…</option>
                                 <option value="AT" selected="selected">Österreich</option>
                             </select>
-                            <div class="chosen-container chosen-container-single" style="width: 659px;" title="" id="shipping_country_chosen"><a class="chosen-single" tabindex="-1"><span>Österreich</span><div><b></b></div></a>
+
+                            <!-- <div class="chosen-container chosen-container-single" style="width: 659px;" title="" id="shipping_country_chosen"><a class="chosen-single" tabindex="-1"><span>Österreich</span><div><b></b></div></a>
                                 <div class="chosen-drop">
                                     <div class="chosen-search">
                                         <input type="text" autocomplete="off">
@@ -137,19 +135,19 @@
                                     <ul class="chosen-results"></ul>
                                 </div>
                             </div>
-                            <noscript>&lt;input type="submit" name="woocommerce_checkout_update_totals" value="Land aktualisieren" /&gt;</noscript>
+                            <noscript>&lt;input type="submit" name="woocommerce_checkout_update_totals" value="Land aktualisieren" /&gt;</noscript> -->
                         </p>
 
                         <p class="form-row form-row-first validate-required" id="shipping_first_name_field">
                             <label for="shipping_first_name" class="">Vorname <abbr class="required" title="erforderlich">*</abbr>
                             </label>
-                            <input type="text" class="input-text " name="shipping_first_name" id="shipping_first_name" placeholder="" value="Fabian">
+                            <input type="text" class="input-text " name="shipping_first_name" id="shipping_first_name" placeholder="" value="">
                         </p>
 
                         <p class="form-row form-row-last validate-required" id="shipping_last_name_field">
                             <label for="shipping_last_name" class="">Nachname <abbr class="required" title="erforderlich">*</abbr>
                             </label>
-                            <input type="text" class="input-text " name="shipping_last_name" id="shipping_last_name" placeholder="" value="Pimminger">
+                            <input type="text" class="input-text " name="shipping_last_name" id="shipping_last_name" placeholder="" value="">
                         </p>
                         <div class="clear"></div>
 
@@ -161,7 +159,7 @@
                         <p class="form-row form-row-wide address-field validate-required" id="shipping_address_1_field">
                             <label for="shipping_address_1" class="">Adresse <abbr class="required" title="erforderlich">*</abbr>
                             </label>
-                            <input type="text" class="input-text " name="shipping_address_1" id="shipping_address_1" placeholder="Anschrift" value="Landstraßer Hauptstraße 32">
+                            <input type="text" class="input-text " name="shipping_address_1" id="shipping_address_1" placeholder="Anschrift" value="">
                         </p>
 
                         <p class="form-row form-row-wide address-field" id="shipping_address_2_field">
@@ -173,12 +171,12 @@
                         <p class="form-row form-row-wide address-field validate-required validate-postcode" id="shipping_postcode_field" data-o_class="form-row form-row-wide address-field validate-required validate-postcode">
                             <label for="shipping_postcode" class="">Postleitzahl (PLZ) <abbr class="required" title="erforderlich">*</abbr>
                             </label>
-                            <input type="text" class="input-text " name="shipping_postcode" id="shipping_postcode" placeholder="Postleitzahl (PLZ)" value="1030">
+                            <input type="text" class="input-text " name="shipping_postcode" id="shipping_postcode" placeholder="Postleitzahl (PLZ)" value="">
                         </p>
                         <p class="form-row form-row-wide address-field validate-required" id="shipping_city_field" data-o_class="form-row form-row-wide address-field validate-required">
                             <label for="shipping_city" class="">Ort <abbr class="required" title="erforderlich">*</abbr>
                             </label>
-                            <input type="text" class="input-text " name="shipping_city" id="shipping_city" placeholder="Ort" value="Wien">
+                            <input type="text" class="input-text " name="shipping_city" id="shipping_city" placeholder="Ort" value="">
                         </p>
 
                         <p class="form-row address-field validate-state form-row-wide" id="shipping_state_field" style="display: none;" data-o_class="form-row form-row-first address-field validate-state">
@@ -281,7 +279,7 @@
                     </li>
                     <li class="payment_method_cheque">
                         <input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="cheque" checked="checked" data-order_button_text="">
-                        <label for="payment_method_cheque">Zahlung mittels Scheck </label>
+                        <label for="payment_method_cheque">Sofortüberweisung</label>
                         <div class="payment_box payment_method_cheque">
                             <p>Bitte senden Sie Ihren Scheck an Shop-Name, Shop-Strasse, Shop-PLZ, Shop-Stadt, Shop-Land.</p>
                         </div>
@@ -303,7 +301,7 @@
                     <input type="hidden" id="_wpnonce" name="_wpnonce" value="632d69a7c9">
                     <input type="hidden" name="_wp_http_referer" value="/wp-admin/admin-ajax.php">
 
-                    <input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Kaufen" data-value="Kaufen">
+                    <input type="submit" class="button alt" name="woocommerce_checkout_place_order" id="place_order" value="Kaufen" data-value="Kaufen" onclick="location.href = '<!-- @path shop-check-out-done -->';">
 
 
                 </div>
@@ -315,5 +313,7 @@
     </form>
 
 </div>
+</div> <!-- .inner-wrapper -->
+</div> <!-- .page-shop -->
 
 <!-- @include footer -->
