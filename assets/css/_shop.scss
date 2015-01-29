@@ -91,12 +91,13 @@ $shop-table-border: solid 2px $gray-1;
 		@include respond-to(bp-medium) {
 			padding: 1em 0.7em;
 		}
+		&:first-child {
+			padding-left: 0;
+		}
 		&:last-child {
 			padding-right: 0;
 		}
 	}
-
-
 
 
 	// Auflistung der Eigenschaften (Variations des Produkt)
@@ -110,12 +111,12 @@ $shop-table-border: solid 2px $gray-1;
 	dt {
 		display: none; // Betitelung der Varation ausblende, nicht nötig
 	}
+}
 
-	@include respond-to(bp-small-only) {
-		display: block;
-
-		/* Force table to not be like tables anymore */
-		table, thead, tbody, th, td, tr {
+.cart {
+	/* Force table to not be like tables anymore */
+	tbody, tbody th, tbody td, tbody tr {
+		@include respond-to(bp-small-only) {
 			display: block; 
 		}
 	}
@@ -222,7 +223,7 @@ $shop-table-border: solid 2px $gray-1;
 
 	.minus, .plus {
 		position: absolute;
-		top: -1px;
+		top: 0.4em;
 		width: 1.5em;
 		font-weight: 600;
 		background: none;
@@ -323,7 +324,9 @@ $shop-table-border: solid 2px $gray-1;
 	border-top: 3px solid $text-color-prim;
 
 	td,
-	th {
+	th,
+	strong {
+		padding-top: 0.5em !important;
 		font-weight: 600;
 		font-size: 1.1em;
 	}
@@ -337,6 +340,23 @@ input[type^="submit"].checkout-button {
 		float: right;
 	}
 }
+
+
+.product-quantity {
+	font-weight: 400;
+}
+.cart .product-total {
+	@include respond-to(bp-small-only) {
+		margin-top: -0.5em;
+		font-weight: 600;
+		font-size: 1.2em;
+	}
+	@include respond-to(bp-medium) {
+		text-align: right;
+	}
+}
+
+
 
 // ###############
 // ## CHECK OUT ##
@@ -365,4 +385,43 @@ input[type^="submit"].checkout-button {
 
 .form-row {
 	margin: 0;
+}
+
+#ship-to-different-address {
+	input {
+		width: auto;
+		margin-right: 0.2em;
+	}
+	label {
+		display: inline;
+	}
+}
+
+
+
+// Kasse Tabelle Zusammenfassung
+
+#order_review {
+	thead {
+		border-bottom: none;
+	}
+	td {
+		vertical-align: top;
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		&:last-child {
+			text-align: right;
+		}
+	}
+
+	tfoot {
+		tr:first-child {
+			th, td {
+				padding-top: 0.5em;
+			}
+		}
+		th, td {
+			padding: 0.25em 0;
+		}
+	}
 }

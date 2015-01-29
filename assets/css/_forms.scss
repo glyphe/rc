@@ -14,7 +14,7 @@ input {
   @include transition(background-color 0.2s ease-out);
 
   @include placeholder {
-    color: $gray-2;
+    color: $gray-3;
   }
   &:hover {
     border-color: darken($brand-color-prim,10%);
