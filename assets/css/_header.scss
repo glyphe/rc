@@ -9,6 +9,7 @@
   }
   @include respond-to(bp-large) {
     padding: 1.5em $inner-distance 1em;
+    font-size: 1.1em;
   }
   box-shadow: 0 1px 3px rgba(0,0,0,0.4);
 

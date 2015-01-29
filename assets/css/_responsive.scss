@@ -31,6 +31,11 @@
       @content;
     }
   }
+  @else if $media == bp-xxlarge {
+    @media only screen and (min-width: $bp-xxlarge) {
+      @content;
+    }
+  }
   @else {
     @media only screen and (min-width: $media) {
       @content;

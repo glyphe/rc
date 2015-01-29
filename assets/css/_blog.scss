@@ -48,7 +48,10 @@
 		border-top: 0;
 		border-left: 2px solid $gray-1;
 		padding-left: 2em;
-		font-size: 0.8em;
+	}
+
+	@include respond-to(bp-large-only) {
+		font-size: 0.9em;
 	}
 
 	

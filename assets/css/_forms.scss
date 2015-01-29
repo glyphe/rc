@@ -35,10 +35,10 @@ input {
     color: $background-color;
     padding: 0.5em 1em 0.4em;
 
-    @include respond-to(bp-small-only) {
-      font-size: 1.2em;
-      padding: 0.7em 1em 0.5em;
-    }
+    // @include respond-to(bp-small-only) {
+    //   font-size: 1.2em;
+    //   padding: 0.7em 1em 0.5em;
+    // }
     @include respond-to(bp-medium) {
       width: auto;
     }
@@ -48,6 +48,9 @@ input {
     }
     &:active {
       background-color: $text-color-prim;
+    }
+    &:focus {
+      background-color: rgba($text-color-prim,1);
     }
   }
 

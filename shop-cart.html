@@ -1,9 +1,16 @@
-<!-- $title Über uns | Raincombi -->
 <!-- @include header -->
+<!-- $title Warenkorb | Raincombi -->
 
 <div class="page-shop">
     <div class="inner-wrapper">
-        <h1>Warenkorb</h1>
+        <div class="shop-title-container">
+            <div>
+                <h1>Warenkorb <span aria-hidden="true" class="icon_cart_alt"></span></h1>
+            </div>
+            <div class="shop-steps">
+                Schritt 1 von 3
+            </div>
+        </div>
 
 <div class="woocommerce">
     <form action="http://projects2.fabianpimminger.com/?page_id=5" method="post">
@@ -11,7 +18,6 @@
         <table class="shop_table cart" cellspacing="0">
             <thead>
                 <tr>
-                    <th class="product-remove">&nbsp;</th>
                     <th class="product-thumbnail">&nbsp;</th>
                     <th class="product-name">Produkt</th>
                     <th class="product-price">Preis</th>
@@ -20,12 +26,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="cart_item">
-                    <td class="product-remove">
-                        <a href="http://projects2.fabianpimminger.com/?page_id=5&#038;remove_item=b49dd8baec13d6d8f0683c0c3a5f2a09&#038;_wpnonce=a083ccd8c0" class="remove" title="Dieses Element entfernen">&times;</a> </td>
-
+                <tr class="cart_item">                
                     <td class="product-thumbnail">
-                        <a href="<!-- @path overall-sporty -->"><img width="90" src="<!-- @path sporty-verwandlung-4 -->" class="attachment-shop_thumbnail wp-post-image" alt="parka-shop-vorne" />
+                        <div class="product-remove">
+                            <a href="http://projects2.fabianpimminger.com/?page_id=5&#038;remove_item=b49dd8baec13d6d8f0683c0c3a5f2a09&#038;_wpnonce=a083ccd8c0" class="remove" title="Dieses Element entfernen"><span aria-hidden="true" class="icon_close_alt"></span></a>
+                        </div>
+                        <a href="<!-- @path overall-sporty -->"><img width="90" src="<!-- @path sporty-shop-thumb -->" class="attachment-shop_thumbnail wp-post-image" alt="parka-shop-vorne" />
                         </a>
                     </td>
 
@@ -44,100 +50,81 @@
                     </td>
 
                     <td class="product-price">
-                        <span class="amount">&euro;&nbsp;16,00</span>
+                        <span class="amount">&euro;&nbsp;270,00</span>
                     </td>
 
                     <td class="product-quantity">
-                        <div class="quantity">
-                            <input type="number" step="1" min="0" name="cart[b49dd8baec13d6d8f0683c0c3a5f2a09][qty]" value="1" title="Anz." class="input-text qty text" size="4" />
+                        <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus">
+                            <input type="number" step="1" max="6" name="cart[fdd0e3277ea044463159678d3275dc8d][qty]" value="1" title="Qty" class="input-text qty text" size="4">
+                            <input type="button" value="+" class="plus">
                         </div>
+                        <input type="submit" class="button" name="update_cart" value="Aktualisieren" />
                     </td>
 
                     <td class="product-subtotal">
-                        <span class="amount">&euro;&nbsp;16,00</span>
+                        <span class="amount">&euro;&nbsp;270,00</span>
                     </td>
                 </tr>
-                <tr>
-                    <td colspan="6" class="actions">
-                        <div class="coupon">
-
-                            <label for="coupon_code">Gutschein:</label>
-                            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Gutscheincode" />
-                            <input type="submit" class="button" name="apply_coupon" value="Gutschein einlösen" />
-                        </div>
-
-                        <input type="submit" class="button" name="update_cart" value="Warenkorb aktualisieren" />
-                        <input type="hidden" id="_wpnonce" name="_wpnonce" value="a083ccd8c0" />
-                        <input type="hidden" name="_wp_http_referer" value="/?page_id=5" />
-                    </td>
-                </tr>
-
             </tbody>
         </table>
 
+        <input type="hidden" id="_wpnonce" name="_wpnonce" value="a083ccd8c0" />
+        <input type="hidden" name="_wp_http_referer" value="/?page_id=5" />
 
     </form>
 
+
     <div class="cart-collaterals">
 
+        <div class="shipping">
+            <form class="shipping_calculator" action="http://projects2.fabianpimminger.com/?page_id=5" method="post">
 
-        <form class="shipping_calculator" action="http://projects2.fabianpimminger.com/?page_id=5" method="post">
+                <h2>Versandkosten berechnen</h2>
 
-            <h2><a href="#" class="shipping-calculator-button">Versandkosten berechnen</a></h2>
+                <section class="shipping-calculator-form">
 
-            <section class="shipping-calculator-form">
-
-                <p class="form-row form-row-wide">
                     <select name="calc_shipping_country" id="calc_shipping_country" class="country_to_state" rel="calc_shipping_state">
-                        <option value="AT" selected='selected'>Österreich</option>
+                    <option value="AT" selected='selected'>Österreich</option>
                     </select>
-                </p>
 
-                <p class="form-row form-row-wide">
-                    <input type="hidden" name="calc_shipping_state" id="calc_shipping_state" placeholder="Bundesland/ Kanton" /> </p>
+                    <p>
+                        <button type="submit" name="calc_shipping" value="1" class="button">Gesamtsumme aktualisieren</button>
+                    </p>
 
+                    <input type="hidden" id="_wpnonce" name="_wpnonce" value="a083ccd8c0" />
+                    <input type="hidden" name="_wp_http_referer" value="/?page_id=5" /> </section>
+            </form>
+        </div> <!-- shipping-container -->
 
-
-                <p class="form-row form-row-wide">
-                    <input type="text" class="input-text" value="1030" placeholder="Postleitzahl (PLZ)" name="calc_shipping_postcode" id="calc_shipping_postcode" />
-                </p>
-
-
-                <p>
-                    <button type="submit" name="calc_shipping" value="1" class="button">Gesamtsumme aktualisieren</button>
-                </p>
-
-                <input type="hidden" id="_wpnonce" name="_wpnonce" value="a083ccd8c0" />
-                <input type="hidden" name="_wp_http_referer" value="/?page_id=5" /> </section>
-        </form>
+        <div class="coupon">
+            <label for="coupon_code"><h2>Gutschein</h2></label>
+            <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Gutscheincode" />
+            <input type="submit" class="button" name="apply_coupon" value="Gutschein einlösen" />
+        </div>
 
         <div class="cart_totals calculated_shipping">
-            <h2>Warenkorb Gesamtsumme</h2>
-
             <table cellspacing="0">
 
                 <tr class="cart-subtotal">
-                    <th>Warenkorbzwischensumme</th>
-                    <td><span class="amount">&euro;&nbsp;16,00</span>
+                    <th>Zwischensumme</th>
+                    <td><span class="amount">&euro;&nbsp;270,00</span>
                     </td>
                 </tr>
                 <tr class="shipping">
-                    <th>Lieferung und Versand</th>
+                    <th>Versand</th>
                     <td>
-                        Versandkostenfrei
+                        € 0,00
                         <input type="hidden" name="shipping_method[0]" data-index="0" id="shipping_method_0" value="free_shipping" class="shipping_method" />
                     </td>
                 </tr>
                 <tr class="order-total">
-                    <th>Gesamtsumme</th>
-                    <td><strong><span class="amount">&euro;&nbsp;16,00</span></strong> </td>
+                    <th>Gesamtbetrag</th>
+                    <td><span class="amount">&euro;&nbsp;270,00</span></td>
                 </tr>
             </table>
+            <input type="submit" class="checkout-button button alt wc-forward" name="proceed" value="Zur Kasse gehen" />
         </div>
-
-                        <input type="submit" class="checkout-button button alt wc-forward" name="proceed" value="Zur Kasse gehen" />
-
-
     </div>
 </div>
 </div> <!-- .inner-wrapper -->
