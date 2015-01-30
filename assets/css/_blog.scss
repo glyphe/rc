@@ -1,3 +1,16 @@
+.smaller-font {
+	@include respond-to(bp-large) {
+		font-size: 0.9em;
+	}
+}
+
+.blog-smaller-font .entry-content {
+	@extend .smaller-font;
+}
+
+
+////////////////
+
 .blog-header {
 	padding: 2em $inner-distance 0;
 	@extend .entry-header;

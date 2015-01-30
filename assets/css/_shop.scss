@@ -388,9 +388,15 @@ input[type^="submit"].checkout-button {
 }
 
 #ship-to-different-address {
+	margin: 1.5em 0 1.6em;
+
 	input {
 		width: auto;
 		margin-right: 0.2em;
+		display: none; // weil ich einen Icon stattdessen nehmen, muss Fabian gescheit machen
+	}
+	span {
+		font-size: 1.2em;
 	}
 	label {
 		display: inline;
@@ -424,4 +430,74 @@ input[type^="submit"].checkout-button {
 			padding: 0.25em 0;
 		}
 	}
+}
+
+.col2-set, .payment-container {
+	@include respond-to(bp-large) {
+		@include outer-container;
+	}
+
+	h2 {
+		margin: 0 0 0.7em;
+		// @include respond-to(bp-large) {
+		// 	margin-top: 2.5em 0 0.5em;
+		// }
+	}
+
+	> div {
+		margin-bottom: 4.5em;
+
+		@include respond-to(bp-medium-only) {
+			p {
+				max-width: 30em;
+			}
+		}
+		@include respond-to(bp-large) {
+			@include span-columns(6);
+
+			&:first-child {
+				padding-right: 4em;
+			}
+			&:last-child {
+				padding-left: 4em;
+			}
+		}
+	}
+}
+
+#payment {
+	ul {
+		list-style: none;
+		padding-left: 2em;
+		margin: 0;
+	}
+	label {
+		display: inline;
+
+		a:link, a:visited {
+			font-weight: 400;
+
+			@include respond-to(bp-small-only) {
+				margin-top: 0.5em;
+				display: block;
+			}
+		}
+	}
+	input[type^="radio"] {
+		width: auto;
+		margin-left: -2em;
+		margin-right: 1em;
+	}
+	img { // Logos
+		height: 40px;
+		margin-right: 1em;
+	}
+	li {
+		margin-bottom: 1.5em;
+		border-bottom: $shop-table-border;
+	}
+	p { // Beschreibungstexte zu den Bezahlmethoden
+		margin: 0.5em 0;
+	}
+
 }

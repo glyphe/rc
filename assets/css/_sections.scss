@@ -982,6 +982,10 @@ section.sec-table {
 
 .page-haendler {
   margin: 2em 0 4em;
+
+  .page-title {
+    padding-bottom: 0.1em;
+  }
 }
 
 .nav-haendler-switch {
@@ -1052,11 +1056,11 @@ section.sec-table {
 
 section.haendler-map {
   padding: 0;
-  margin: 2em 0 -4em;
-  border-top: 1px solid $gray-2;
-  img {
-    width: 100%;
-  }
+  margin: 1em 0 -4em;
+  border-top: 1px solid $gray-3;
+  height: 500px;
+  background: url(map.png);
+  background-position: center center;
 }
 
 
@@ -1107,3 +1111,57 @@ section.haendler-verzeichnis {
   }
 
 }
+
+
+
+// #############
+// ALTERNATIVEN 
+
+.page-haendler-2 {
+  @extend .page-haendler;  
+
+  .haendler-map {
+    padding: 0;
+    margin: 1em 0 4em;
+    border: 1px solid $gray-1;
+    height: 500px;
+    background: url(map.png);
+    background-position: center center;
+  }
+}
+
+
+.page-haendler-3 {
+  @extend .page-haendler;
+  padding: 0 $inner-distance;
+  @include outer-container;
+
+  section {
+    padding: 0; 
+    &:first-child {
+      @include respond-to(bp-large) {
+        @include span-columns(4);
+      }
+    }
+    &:last-child {
+      @include respond-to(bp-large) {
+        @include span-columns(8);
+      }
+    }
+  }
+
+  .nav-haendler-switch {
+    float: none;
+  }
+
+  .haendler-map {
+    padding: 0;
+    margin: 1em 0 0;
+    border: 1px solid $gray-1;
+    height: 500px;
+    background: url(map.png);
+    background-position: center center;
+  }
+}
+
+
