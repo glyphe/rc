@@ -671,8 +671,8 @@ section.sec-verwandlung {
     display: inline-block; // nebeineinander
 
     &:after {
-      font-family: 'FontAwesome';
-      content: $fa-var-chevron-circle-right;
+      font-family: 'ElegantIcons';
+      content: "\3d"; // Pfeil nach rechts
       font-size: 1.5em;
       position: relative;
       bottom: 120px;
@@ -1107,10 +1107,7 @@ section.haendler-verzeichnis {
     }
   }
   h4 {
-    @include respond-to(bp-medium) {
-      margin: 1em 0 0;
-
-    }
+    margin: 1em 0 0;
   }
 
 }

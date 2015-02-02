@@ -237,6 +237,7 @@ p.leadin {  // Einleitungsabsatz
 		color: #fff;
 		background: $gray-1;
 		@include transition(none);
+		text-decoration: none;
 	}
 	a:hover {
 		color: #fff;
