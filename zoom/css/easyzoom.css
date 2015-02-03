@@ -1,6 +1,6 @@
-﻿/**
- * EasyZoom core styles
- */
+/**
+* EasyZoom core styles
+*/
 .easyzoom {
 	position: relative;
 
@@ -53,8 +53,8 @@
 }
 
 /**
- * EasyZoom layout variations
- */
+* EasyZoom layout variations
+*/
 .easyzoom--overlay .easyzoom-flyout {
 	top: 0;
 	left: 0;
@@ -68,4 +68,29 @@
 	width: 100%;
 	height: 100%;
 	margin-left: 20px;
+}
+
+.easyzoom-zoom{
+  width: 30px;
+  height: 30px;
+  background-image: url(../icon_zoom.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-size:contain;
+  position: absolute;
+  bottom: 20px;
+  right:80px;
+  visibility: hidden;
+}
+
+.easyzoom.show-flyout .easyzoom-zoom{
+  visibility: hidden;
+}
+
+
+@media only screen and (max-width : 480px){
+  .easyzoom-zoom{
+    visibility:visible;
+  }
+
 }

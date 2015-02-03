@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>EasyZoom, jQuery image zoom plugin</title>
+
+	<title>Raincombi Zoom</title>
 
 	<link rel="stylesheet" href="css/easyzoom.css" />
 
 </head>
-<body>
+<body style="margin: 0;">
 
 	<div class="container" style="background-image: url(shop-bg-big.jpg); background-position: center bottom;
 	background-repeat: no-repeat;
-	background-size: cover; padding: 90px 0 40px">
+	background-size: cover; padding: 90px 0 10px">
 
 		<!-- Example -->
 		<section id="example" style="text-align:center">
@@ -29,7 +29,15 @@
 	</div>
 
 	<script src="jquery-1.11.2.js"></script>
-	<script src="src/easyzoom.js"></script><script>var $easyzoom = $('.easyzoom').easyZoom();var api = $easyzoom.data('easyZoom');</script>
+	<script src="jquery.mobile-events.min.js"></script>
+	<script src="src/easyzoom.js"></script>
+	<script>
+		// Instantiate EasyZoom plugin
+		var $easyzoom = $('.easyzoom').easyZoom();
+
+		// Get the instance API
+		var api = $easyzoom.data('easyZoom');
+	</script>
 
 </body>
 </html>
