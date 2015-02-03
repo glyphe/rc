@@ -214,9 +214,14 @@ p.leadin {  // Einleitungsabsatz
 	text-align: center;
 }
 
+
+// Spricht nur die Nav-Shring im Blog an
+footer .nav-sharing {
+	margin-top: -1.1em;
+}
+
 .nav-sharing {
 	font-size: 1.2em;
-	margin-top: -1.1em;
 
 	@include respond-to(bp-small-only) {
 		font-size: 1.6em;

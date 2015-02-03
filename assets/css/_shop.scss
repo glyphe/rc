@@ -209,7 +209,7 @@ $shop-table-border: solid 2px $gray-1;
 }
 
 .buttons_added {
-	width: 5em;
+	width: 3em;
 	position: relative;
 	display: inline-block;
 
@@ -358,6 +358,11 @@ input[type^="submit"].checkout-button {
 // ## CHECK OUT ##
 // ###############
 
+.woocommerce .required {
+	color: $brand-color-contrast;
+	font-weight: 600;
+	border-bottom: none;
+}
 
 .checkout {
 
@@ -511,12 +516,14 @@ input[type^="submit"].checkout-button {
 }
 
 .shop-feedback {
+	padding: 0 !important;
+
 	h2 {
 		border-bottom: none;
 	}
-	ul {
+	.transaction {
 		list-style: none;
-		margin: 0;
+		margin: 2em 0;
 		padding: 0;
 	}
 	li {
@@ -548,3 +555,17 @@ input[type^="submit"].checkout-button {
 	}
 }
 
+.social-sharing {
+	margin: 3em 0 2em;
+	@include respond-to(bp-medium) {
+		margin-right: 2em;
+	}
+	background-color: lighten($gray-1,10%);
+	border-radius: 5px;
+	padding: 1em;
+	text-align: center;
+
+	h2 {
+		font-size: 0.95em;
+	}
+}
