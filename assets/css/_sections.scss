@@ -1111,3 +1111,36 @@ section.haendler-verzeichnis {
   }
 
 }
+
+// ###############
+// ### PRESSE ####
+// ###############
+
+.presse-artikel {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    border-bottom: 2px solid $gray-1;
+    @include respond-to(bp-small-only) {
+      padding-top: 0.8em;
+      padding-bottom: 0.5em;
+    }
+
+    > div {
+        @include respond-to(bp-medium) {
+          display: table-cell;
+          padding-top: 0.8em;
+          padding-bottom: 0.5em;
+        }
+    }
+  }
+}
+
+.presse-date {
+  color: $gray-2;
+  padding-right: 1em;
+}
+
+
