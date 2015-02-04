@@ -330,10 +330,14 @@ $shop-table-border: solid 2px $gray-1;
 
 
 input[type^="submit"].checkout-button {
+	background-color: $brand-color-contrast;
 	margin: 2em 0 0;
 	padding: 0.8em 1.5em 0.5em;
 	@include respond-to(bp-medium) {
 		float: right;
+	}
+	&:hover {
+		background-color: darken($brand-color-contrast, 7%);
 	}
 }
 
@@ -359,7 +363,7 @@ input[type^="submit"].checkout-button {
 // ###############
 
 .woocommerce .required {
-	color: $brand-color-contrast;
+	color: $alert-color;
 	font-weight: 600;
 	border-bottom: none;
 }

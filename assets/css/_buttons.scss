@@ -30,7 +30,7 @@
 
   &:link, &:visited {}
   &:hover, &:active, &:focus {
-    background-color: darken($brand-color-contrast,10%);
+    background-color: darken($brand-color-contrast,7%);
   }
 }
 
